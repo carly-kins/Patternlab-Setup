@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "src:css": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 source/css/style.scss source/css/style.css",
     "pl:build": "patternlab build --config ./patternlab-config.json",
     "pl:help": "patternlab --help",
     "pl:install": "patternlab install --config ./patternlab-config.json",
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "pl:version": "patternlab --version",
     "start": "npm run pl:serve",
-    "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 source/css/style.scss source/css/style.css"
+    "yay": "npm run src:css && npm run pl:serve"
   },
   "keywords": [],
   "author": "",
@@ -22,8 +23,6 @@
     "@pattern-lab/engine-handlebars": "^5.16.4",
     "@pattern-lab/starterkit-handlebars-vanilla": "^1.4.3",
     "@pattern-lab/uikit-workshop": "^5.17.0",
-    "gulp": "^4.0.2",
-    "gulp-v4": "^4.0.0-alpha.5",
     "node-sass": "^7.0.3"
   },
   "devDependencies": {
