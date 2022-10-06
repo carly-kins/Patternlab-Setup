@@ -6,3 +6,5 @@ patternlab.json
 Thumbs.db
 .idea/
 public
+source/css/style.css
+source/css/stylemap.css

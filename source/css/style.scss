@@ -45,4 +45,19 @@
 /*------------------------------------*\
     #COMPONENTS
 \*------------------------------------*/
-@import "../_patterns/**/*.scss";
+@import "source/_patterns/atoms/images/icon";
+@import "source/_patterns/molecules/blocks/card";
+@import "source/_patterns/molecules/buttons/button";
+@import "source/_patterns/molecules/forms/field";
+@import "source/_patterns/molecules/global/logo";
+@import "source/_patterns/molecules/layout/grid";
+@import "source/_patterns/molecules/layout/layout-container";
+@import "source/_patterns/molecules/navigation/footer-nav";
+@import "source/_patterns/molecules/navigation/primary-nav";
+@import "source/_patterns/molecules/text/page-header";
+@import "source/_patterns/organisms/global/footer";
+@import "source/_patterns/organisms/global/header";
+@import "source/_patterns/organisms/lists/card-list";
+@import "source/_patterns/organisms/sections/section";
+@import "source/_patterns/organisms/tables/table";
+@import "source/_patterns/organisms/text/text-passage";
