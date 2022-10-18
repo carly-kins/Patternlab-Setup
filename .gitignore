@@ -3,10 +3,11 @@ node_modules/
 patternlab.json
 .sass-cache/*
 ./sass-cache
+sass-cache
 Thumbs.db
 .idea/
 public
 source/css/style.css
 source/css/style.css.map
 pattern_exports
-./helpers
+helpers
