@@ -12,7 +12,8 @@
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "pl:version": "patternlab --version",
     "start": "npm run pl:serve",
-    "yay": "npm run src:css && npm run pl:serve"
+    "yay": "npm run src:css && npm run pl:serve",
+    "build": "grunt css && grunt copy "
   },
   "keywords": [],
   "author": "",
@@ -22,11 +23,16 @@
     "@pattern-lab/core": "^5.17.0",
     "@pattern-lab/engine-handlebars": "^5.16.4",
     "@pattern-lab/starterkit-handlebars-vanilla": "^1.4.3",
-    "@pattern-lab/uikit-workshop": "^5.17.0",
-    "node-sass": "^7.0.3"
+    "@pattern-lab/uikit-workshop": "^5.17.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
+    "grunt": "^1.5.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^3.2.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-sass": "^3.1.0",
+    "node-sass": "^7.0.3",
     "postcss-cli": "^10.0.0"
   }
 }
