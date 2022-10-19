@@ -11,6 +11,7 @@ module.exports = function (grunt) {
     clean: {
       folder: ['pattern_exports/', 'public/'],
       css: ['source/css/style.css', 'source/css/style.css.map'],
+      meta: ['source/_meta/_foot.hbs', 'source/_meta/_head.hbs']
     },
     // Turns SCSS to CSS 
     sass: {
