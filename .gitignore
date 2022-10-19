@@ -20,3 +20,5 @@ coverage/
 .Trashes
 ehthumbs.db
 Thumbs.db
+source/_meta/_foot.hbs
+source/_meta/_head.hbs
