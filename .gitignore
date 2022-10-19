@@ -12,6 +12,8 @@ helpers
 .cache/
 coverage/
 *.log
+source/_meta/_foot.hbs
+source/_meta/_head.hbs
 
 # OS generated files
 .DS_Store
@@ -20,5 +22,3 @@ coverage/
 .Trashes
 ehthumbs.db
 Thumbs.db
-source/_meta/_foot.hbs
-source/_meta/_head.hbs
