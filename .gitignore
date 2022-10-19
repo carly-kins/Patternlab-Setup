@@ -1,13 +1,22 @@
 node_modules/
-.DS_Store
 patternlab.json
 .sass-cache/*
 ./sass-cache
 sass-cache
-Thumbs.db
 .idea/
 public
 source/css/style.css
 source/css/style.css.map
 pattern_exports
 helpers
+.cache/
+coverage/
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

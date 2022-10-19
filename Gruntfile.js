@@ -1,39 +1,78 @@
 const sass = require('node-sass');
 
-module.exports = function(grunt) {
-    // Project configuration.
-    grunt.initConfig({
-      pkg: grunt.file.readJSON('package.json'),
-      copy: {
-        main: {
+module.exports = function (grunt) {
+  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+
+  // Project configuration.
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+  //NOT part of Build process
+    // Clears out dev and prod folders
+    clean: {
+      folder: ['pattern_exports/', 'public/'],
+      css: ['source/css/style.css', 'source/css/style.css.map'],
+    },
+    // Turns SCSS to CSS 
+    sass: {
+      dist: {
+        options: {
+          implementation: sass,
+          outputStyle: 'compact',
+          sourceComments: false,
+          sourceMap: true
+        },
+        files: {
+          'source/css/style.css': 'source/css/style.scss'
+        }
+      }
+    },
+  //Build process
+    // Minifies CSS
+    cssmin: {
+      sitecss: {
+        options: {
+          banner: ''
+        },
+        files: {
+          'pattern_exports/css/site.min.css': [
+            'public/css/style.css'
+          ]
+        }
+      }
+    },
+    // Combines and condenses JS
+    uglify: {
+      options: {
+        compress: true
+      },
+      applib: {
+        src: [
+          'public/js/*'
+        ],
+        dest: 'pattern_exports/js/applib.js'
+      }
+    },
+    imagemin: {
+      dynamic: {
+        files: [{
           expand: true,
-          cwd: 'public', 
-          src: ['images/*', 'css/style.css', 'js/*.js', 'fonts/*', '*.ico'], 
-          dest: 'pattern_exports/'
-        },
-      },
-      sass: {
-        dist: {
-          options: {
-            implementation: sass,
-            outputStyle: 'compact',
-            sourceComments: false,
-            sourceMap: true
-          },
-          files: {
-            'source/css/style.css' : 'source/css/style.scss'
-          }
-        },
-      },
-    });
+          cwd: 'public/images/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'pattern_exports/images/'
+        }]
+      }
+    },
+    // Copies over SVG and Favicon into images 
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'public',
+        src: ['*.ico', '*.svg'],
+        dest: 'pattern_exports/images/'
+      }
+    },
+  });
 
-    //TODO: Clear ./patten-export and ./public folder 
-  
-    // Load the plugin that provides the tasks.
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-sass');
-    
-    // Default task(s).
-    grunt.registerTask('default', ['']);
-  };
-
+  // Default task(s).
+  grunt.registerTask('default', ['cssmin', 'uglify', 'imagemin', 'copy']);
+};
