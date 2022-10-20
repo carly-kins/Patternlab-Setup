@@ -70,10 +70,21 @@ module.exports = function (grunt) {
         cwd: 'public',
         src: ['*.ico', '*.svg'],
         dest: 'pattern_exports/images/'
-      }
-    },
+      },
+      meta: {
+        expand: true,
+        flatten: true,
+        cwd: 'source',
+        src: ['**/head.hbs', '**/foot.hbs'],
+        dest: 'source/_meta/',
+          rename: function (dest, matchedSrcPath) {
+            if (matchedSrcPath.substring(0, 1) !== '_') {
+                return dest + '_' + matchedSrcPath.replace('.hbs', '.mustache');}
+            }
+        },
+    }
   });
 
   // Default task(s).
-  grunt.registerTask('default', ['cssmin', 'uglify', 'imagemin', 'copy']);
+  grunt.registerTask('default', ['copy:meta', 'cssmin', 'uglify', 'imagemin', 'copy:main']);
 };
