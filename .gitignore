@@ -22,3 +22,5 @@ source/_meta/_head.hbs
 .Trashes
 ehthumbs.db
 Thumbs.db
+source/_meta/_foot.mustache
+source/_meta/_head.mustache
