@@ -1,33 +1,33 @@
 {
-	"iconPath": "../../icons.svg",
+	"iconPath": "../../images/",
 	"icon": "search",
 	"icons": [
 		{
-			"iconPath": "../../icons.svg",
+			"iconPath": "../../images/",
 			"icon": "minus"
 		},
 		{
-			"iconPath": "../../icons.svg",
+			"iconPath": "../../images/",
 			"icon": "plus"
 		},
 		{
-			"iconPath": "../../icons.svg",
+			"iconPath": "../../images/",
 			"icon": "search"
 		},
 		{
-			"iconPath": "../../icons.svg",
+			"iconPath": "../../images/",
 			"icon": "triangle-down"
 		},
 		{
-			"iconPath": "../../icons.svg",
+			"iconPath": "../../images/",
 			"icon": "triangle-up"
 		},
 		{
-			"iconPath": "../../icons.svg",
+			"iconPath": "../../images/",
 			"icon": "triangle-right"
 		},
 		{
-			"iconPath": "../../icons.svg",
+			"iconPath": "../../images/",
 			"icon": "triangle-left"
 		}
 	]

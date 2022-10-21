@@ -80,11 +80,11 @@
   ],
   "patternExportAll": false,
   "patternExportDirectory": "pattern_exports",
-  "patternExportPatternPartials": [],
+  "patternExportPatternPartials": ["templates-page"],
   "patternExportPreserveDirectoryStructure": true,
   "patternExportRaw": false,
-  "patternMergeVariantArrays": true,
-  "renderFlatPatternsOnViewAllPages": false,
+  "patternMergeVariantArrays": false,
+  "renderFlatPatternsOnViewAllPages": true,
   "serverOptions": {
     "wait": 1000
   },
