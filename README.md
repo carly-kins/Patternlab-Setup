@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   </a>
   <a href="https://twitter.com/Carly_kins_" target="_blank">
-    <img alt="Twitter: carly_kins_" src="https://img.shields.io/twitter/follow/carly\_kins\_.svg?style=social" />
+    <img alt="Twitter: carly_kins_" src="https://img.shields.io/twitter/follow/carly_kins_.svg?style=social" />
   </a>
 </p>
 
