@@ -12,7 +12,7 @@
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "pl:version": "patternlab --version",
     "start": "npm run pl:serve",
-    "dev": "grunt sass && grunt copy:meta && npm run start",
+    "dev": "grunt sass && grunt copy:meta && grunt copy:mustache && npm run start",
     "build": "grunt sass && npm run pl:build && grunt"
   },
   "keywords": [],
@@ -34,7 +34,6 @@
     "grunt-contrib-cssmin": "^4.0.0",
     "grunt-contrib-imagemin": "^4.0.0",
     "grunt-contrib-uglify": "^5.2.2",
-    "grunt-replace-filename": "^0.1.2",
     "grunt-sass": "^3.1.0",
     "node-sass": "^7.0.3",
     "postcss-cli": "^10.0.0"
