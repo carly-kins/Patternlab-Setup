@@ -1,16 +1,52 @@
-# Experimental Setup for Patternlab
+<h1 align="center">Welcome to Pattern Lab - Grunt Setup 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/carly\_kins\_" target="_blank">
+    <img alt="Twitter: carly\_kins\_" src="https://img.shields.io/twitter/follow/carly\_kins\_.svg?style=social" />
+  </a>
+</p>
 
-Directions coming soon. This is just a place for my notes. 
+> A experimental setup of Patternlab using grunt.js to autautomate final build.
 
-**Notes:**
-- [Patternlab](https://patternlab.io/docs/installing-pattern-lab/)
-- [Grunt](https://gruntjs.com/configuring-tasks)
-  - [grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy)
+## Install
 
-*Currently not used but was useful:*
-- node-sass copy w/o grunt:
-  - https://gitter.im/pattern-lab/node?at=5bac9f9998245f4ae08f2736
-  - https://css-tricks.com/why-npm-scripts/
+```sh
+npm install
+```
 
-*Git commands that are useful:*
-- git log --graph --full-history --all --pretty=format:"%h%x09%d%x20%s"
+## Develop
+
+```sh
+npm run dev
+```
+
+## Build
+
+```sh
+npm run build
+```
+
+## Clean
+
+```sh
+grunt clean
+```
+
+## Author
+
+👤 **Carly Wooten**
+
+* Website: www.carlyannewooten.com
+* Twitter: [@carly\_kins\_](https://twitter.com/carly\_kins\_)
+* Github: [@carly-kins](https://github.com/carly-kins)
+* LinkedIn: [@carly-anne-wooten](https://linkedin.com/in/carly-anne-wooten)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
