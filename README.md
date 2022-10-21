@@ -7,7 +7,7 @@
   </a>
 </p>
 
-> A experimental setup of Patternlab using grunt.js to autautomate final build.
+> A experimental setup of Patternlab using grunt.js to automate final build.
 
 ## Install
 
