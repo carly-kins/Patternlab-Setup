@@ -1,11 +1,9 @@
 <h1 align="center">Welcome to Pattern Lab - Grunt Setup 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="#" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
   </a>
-  <a href="https://twitter.com/carly\_kins\_" target="_blank">
-    <img alt="Twitter: carly\_kins\_" src="https://img.shields.io/twitter/follow/carly\_kins\_.svg?style=social" />
+  <a href="https://twitter.com/Carly_kins_" target="_blank">
+    <img alt="Twitter: carly_kins_" src="https://img.shields.io/twitter/follow/carly\_kins\_.svg?style=social" />
   </a>
 </p>
 
