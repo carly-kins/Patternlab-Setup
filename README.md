@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Pattern Lab - Grunt Setup 👋</h1>
+<h1 align="center">My Portfolio 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   </a>
