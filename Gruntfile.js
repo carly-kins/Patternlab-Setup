@@ -51,7 +51,7 @@ module.exports = function(grunt) {
             'node_modules/@popperjs/core/dist/umd/popper.min.js',
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'node_modules/bootstrap/js/dist/dropdown.js',
-            'custom_js/*.js'
+            'source/js/custom_js/*.js'
           ],
           dest: 'source/js/main.js'
         }
