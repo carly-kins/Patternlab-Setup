@@ -13,7 +13,7 @@
     "pl:version": "patternlab --version",
     "start": "npm run pl:serve",
     "dev": "grunt sass && grunt copy:meta && grunt copy:mustache && npm run start",
-    "build": "grunt sass && npm run pl:build && grunt"
+    "build": "grunt clean && grunt sass && npm run pl:build && grunt"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "@pattern-lab/engine-handlebars": "^5.16.4",
     "@pattern-lab/starterkit-handlebars-vanilla": "^1.4.3",
     "@pattern-lab/uikit-workshop": "^5.17.0",
+    "bootstrap": "^5.2.2",
     "matchdep": "^2.0.0"
   },
   "devDependencies": {
