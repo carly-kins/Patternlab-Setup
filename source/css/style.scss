@@ -13,15 +13,15 @@
 /*------------------------------------*\
     #THIRD PARTY 
 \*------------------------------------*/
-//@import "node_modules/bootstrap/scss/bootstrap-grid";//
-//@import "node_modules/bootstrap/scss/bootstrap-reboot";//
-//@import "node_modules/bootstrap/scss/bootstrap-utilities";//
-//@import "node_modules/bootstrap/scss/bootstrap";//
-//@import "node_modules/bootstrap/scss/_utilities";//
-//@import "node_modules/bootstrap/scss/_variables";//
-//@import "node_modules/bootstrap/scss/_dropdown";//
-//@import "node_modules/bootstrap/scss/_nav";//
-//@import "node_modules/bootstrap/scss/_navbar";//
+@import "node_modules/bootstrap/scss/bootstrap-grid";
+@import "node_modules/bootstrap/scss/bootstrap-reboot";
+@import "node_modules/bootstrap/scss/bootstrap-utilities";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/_utilities";
+@import "node_modules/bootstrap/scss/_variables";
+@import "node_modules/bootstrap/scss/_dropdown";
+@import "node_modules/bootstrap/scss/_nav";
+@import "node_modules/bootstrap/scss/_navbar";
 
 /*------------------------------------*\
     #ABSTRACTS
@@ -67,7 +67,6 @@
 @import "source/_patterns/molecules/layout/grid";
 @import "source/_patterns/molecules/layout/layout-container";
 @import "source/_patterns/molecules/navigation/footer-nav";
-@import "source/_patterns/molecules/navigation/primary-nav";
 @import "source/_patterns/molecules/text/page-header";
 @import "source/_patterns/organisms/global/footer";
 @import "source/_patterns/organisms/global/header";

@@ -6,12 +6,11 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
-      //NOT part of Build process
-      // Clears out dev and prod folders
       clean: {
         folder: ['pattern_exports/', 'public/'],
         css: ['source/css/style.css', 'source/css/style.css.map'],
-        meta: ['source/_meta/*.hbs', 'source/_meta/*.mustache']
+        meta: ['source/_meta/*.mustache'],
+        js: ['source/js/main.js']
       },
       // Turns SCSS to CSS 
       sass: {
@@ -48,9 +47,13 @@ module.exports = function(grunt) {
         },
         applib: {
           src: [
-            'public/js/*'
+            'node_modules/jquery/dist/jquery.slim.min.js',
+            'node_modules/@popperjs/core/dist/umd/popper.min.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/bootstrap/js/dist/dropdown.js',
+            'custom_js/*.js'
           ],
-          dest: 'pattern_exports/js/applib.js'
+          dest: 'source/js/main.js'
         }
       },
       imagemin: {
@@ -63,7 +66,7 @@ module.exports = function(grunt) {
           }]
         }
       },
-      // Copy Grunt processes: SVG and Favicon, updated head and foot.
+      // Copy Grunt build processesses.
       copy: {
         main: {
           expand: true,
@@ -71,18 +74,13 @@ module.exports = function(grunt) {
           src: ['*.ico', '*.svg'],
           dest: 'pattern_exports/images/'
         },
-        meta: {
+        js: {
           expand: true,
-          flatten: true,
-          cwd: 'source',
-          src: ['**/head.hbs', '**/foot.hbs'],
-          dest: 'source/_meta/',
-          rename: function(dest, matchedSrcPath) {
-            if (matchedSrcPath.substring(0, 1) !== '_') {
-              return dest + '_' + matchedSrcPath;
-            }
-          }
+          cwd: 'public/js/',
+          src: ['*.js'],
+          dest: 'pattern_exports/js/'
         },
+      // Make .mustache match .hbs
         mustache: {
           expand: true,
           flatten: true,
@@ -95,8 +93,10 @@ module.exports = function(grunt) {
             }
           }
         },
-      },
-    });
+    }
+  });
   // Default task(s).
-  grunt.registerTask('default', ['copy:meta', 'copy:mustache', 'cssmin', 'uglify', 'imagemin', 'copy:main']);
+  grunt.registerTask('default', ['clean']);
+  grunt.registerTask('source', ['sass', 'copy:mustache', 'uglify']);
+  grunt.registerTask('public', ['cssmin', 'imagemin', 'copy:main', 'copy:js'])
 };

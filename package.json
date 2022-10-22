@@ -12,8 +12,8 @@
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "pl:version": "patternlab --version",
     "start": "npm run pl:serve",
-    "dev": "grunt sass && grunt copy:meta && grunt copy:mustache && npm run start",
-    "build": "grunt clean && grunt sass && npm run pl:build && grunt"
+    "dev": "grunt source && npm run start",
+    "build": "grunt && grunt source && npm run pl:build && grunt public"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +24,9 @@
     "@pattern-lab/engine-handlebars": "^5.16.4",
     "@pattern-lab/starterkit-handlebars-vanilla": "^1.4.3",
     "@pattern-lab/uikit-workshop": "^5.17.0",
+    "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
+    "jquery": "^3.3.1",
     "matchdep": "^2.0.0"
   },
   "devDependencies": {
