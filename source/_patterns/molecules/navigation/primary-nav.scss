@@ -5,28 +5,28 @@
 /**
  * Primary navigation existing in the header and maybe the footer
  */
-.c-primary-nav {
+.navbar {
 	margin-left: auto;
 }
 
 /**
  * Primary navigation list
  */
-.c-primary-nav__list {
+.navbar-nav {
 	display: flex;
 }
 
 /**
  * Primary navigation item
  */
-.c-primary-nav__item {
+.nav-item {
 	margin-left: 2rem;
 }
 
 /**
  * Primary navigation link
  */
-.c-primary-nav__link {
+.nav-link {
 	display: block;
 	padding: 0.5rem 0;
 	cursor: pointer;
