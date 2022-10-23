@@ -8,7 +8,7 @@
       <ul class="navbar-nav">
         {{# navItems }}
           <li class="nav-item{{#dropdown}} dropdown{{/dropdown}}">
-            <a class="nav-link{{#dropdown}} dropdown-toggle{{/dropdown}}" href="{{ url }}"{{#dropdown}}role="button" data-bs-toggle="dropdown" id="#{{ dropdownID }}" aria-expanded="false"{{/dropdown}}>{{ label }}</a>
+            <a class="nav-link{{#dropdown}} dropdown-toggle{{/dropdown}}" href="{{ url }}"{{#dropdown}}role="button" data-bs-toggle="dropdown" id="{{ dropdownID }}" aria-expanded="false"{{/dropdown}}>{{ label }}</a>
             {{#dropdown}}
               <ul class="dropdown-menu">
               {{# dropdownItems }}

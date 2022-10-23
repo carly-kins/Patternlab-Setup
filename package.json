@@ -12,7 +12,7 @@
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "pl:version": "patternlab --version",
     "start": "npm run pl:serve",
-    "dev": "grunt source && npm run start",
+    "dev": "grunt && grunt source && npm run start",
     "build": "grunt && grunt source && npm run pl:build && grunt public"
   },
   "keywords": [],
