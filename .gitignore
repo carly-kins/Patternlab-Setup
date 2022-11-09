@@ -19,6 +19,7 @@ coverage/
 .Trashes
 ehthumbs.db
 Thumbs.db
-source/_meta/_foot.mustache
-source/_meta/_head.mustache
+source/_meta/*.hbs
+source/_meta/*.mustache
 dependencyGraph.json
+
