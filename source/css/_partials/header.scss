@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+/**
+ * Global block at the top of each page containing the navigation, logo, and other potential contents
+ */
+.c-header {
+	position: relative;
+	padding: $spacer;
+	margin-bottom: $spacer;
+}
+
+/**
+ * Header inner
+ */
+.c-header__inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

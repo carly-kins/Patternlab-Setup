@@ -7,13 +7,10 @@ sass-cache
 public
 source/css/style.css
 source/css/style.css.map
-pattern_exports
 helpers
 .cache/
 coverage/
 *.log
-source/_meta/_foot.hbs
-source/_meta/_head.hbs
 
 # OS generated files
 .DS_Store
@@ -24,3 +21,4 @@ ehthumbs.db
 Thumbs.db
 source/_meta/_foot.mustache
 source/_meta/_head.mustache
+dependencyGraph.json

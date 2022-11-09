@@ -80,7 +80,7 @@
   ],
   "patternExportAll": false,
   "patternExportDirectory": "pattern_exports",
-  "patternExportPatternPartials": ["templates-page"],
+  "patternExportPatternPartials": [""],
   "patternExportPreserveDirectoryStructure": true,
   "patternExportRaw": false,
   "patternMergeVariantArrays": false,
@@ -89,7 +89,7 @@
     "wait": 1000
   },
   "starterkitSubDir": "dist",
-  "styleGuideExcludes": [],
+  "styleGuideExcludes": ["*.scss"],
   "theme": {
     "color": "dark",
     "density": "cozy",

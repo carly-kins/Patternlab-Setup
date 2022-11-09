@@ -1,0 +1,9 @@
+{
+    "button" : {
+        "styleModifier" : "c-btn__secondary",
+        "dataElement" : true,
+        "url" : "",
+        "buttonText" : "Button",
+        "id" : ""
+    }
+}

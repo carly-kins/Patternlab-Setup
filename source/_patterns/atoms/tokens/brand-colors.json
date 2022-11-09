@@ -1,12 +1,32 @@
 {
   "items": [
     {
-      "name": "$color-brand-blue",
-      "value": "#0000ff",
+      "name": "$platinum",
+      "value": "#E9E8E3ff",
+      "comment": ""
+    },
+    {
+      "name": "$russian-violet",
+      "value": "#1B0A47ff",
+      "comment": ""
+    },
+    {
+      "name": "$thistle",
+      "value": "#C9B5DEff",
+      "comment": ""
+    },
+    {
+      "name": "$english-lavender",
+      "value": "#B1849Bff",
+      "comment": ""
+    },
+    {
+      "name": "$rich-black-fogra-29",
+      "value": "#0F1D28ff",
       "comment": ""
     }
   ],
   "meta": {
-    "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    "description": ""
   }
 }

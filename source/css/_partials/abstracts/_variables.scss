@@ -1,0 +1,120 @@
+/*------------------------------------*\
+    #VARIABLES
+\*------------------------------------*/
+$rem-base: 16px;
+
+/** Neutral Colors
+ * 
+ */
+$color-neutral-white: #fff;
+$color-neutral-gray-02: #f9f9f9;
+$color-neutral-gray-07: #eee;
+$color-neutral-gray-13: #ddd;
+$color-neutral-gray-27: #bbb;
+$color-neutral-gray-50: #808080;
+$color-neutral-gray-60: #666;
+$color-neutral-gray-73: #444;
+$color-neutral-gray-93: #131313;
+$color-neutral-black: #000;
+$transparent: rgba(0, 0, 0, 0);
+
+/** Utility Colors
+ * 
+ */
+$color-utility-info: #0192d0;
+$color-utility-error: #b12a0b;
+$color-utility-success: #03804d;
+$color-utility-warning: #a59b15;
+
+/** Custom Colors
+ * 
+ */
+$platinum: #E9E8E3ff;
+$russian-violet: #1b0a47;
+$thistle: #c9b5de;
+$thistle-contrast: #6b4497;
+$thistle-contrast-2: #5A4B95;
+$english-lavender: #b1849b;
+$rich-black-fogra-29: #0F1D28ff;
+$pale-pink: #f7d1cdff;
+$queen-pink: #e8c2caff;
+$glossy-grape: #b392acff;
+$old-lavender: #735d78ff;
+$manatee: #8e9aafff;
+$languid-lavender: #cbc0d3;
+$pale-purple-pantone: #feeafa;
+$lavender-web: #dee2ff;
+
+/** Body text and background colors
+ *
+ */
+$color-body-text: $rich-black-fogra-29;
+$color-body-bg: $color-neutral-white !default;
+
+/** Highlight colors
+  * 
+  */
+$color-text-highlight: $color-neutral-gray-93;
+$color-text-highlight-bg: $color-neutral-gray-13;
+
+$color-links: $thistle-contrast;
+$color-links-hover: $russian-violet;
+$color-links-active: $russian-violet;
+$color-links-visited: $color-neutral-gray-60;
+
+/** Button Colors
+  * 
+  */
+$color-btn-primary: $color-neutral-white !default;
+$color-btn-primary-bg: $color-neutral-gray-93 !default;
+$color-btn-primary-bg-hover: $color-neutral-gray-50 !default;
+$color-btn-primary-border: $color-neutral-gray-93 !default;
+
+$color-btn-secondary: $color-neutral-gray-93 !default;
+$color-btn-secondary-bg: $color-neutral-white !default;
+$color-btn-secondary-bg-hover: $color-neutral-gray-07 !default;
+$color-btn-secondary-border: $color-neutral-gray-93 !default;
+
+$color-btn-disabled: $color-neutral-gray-50 !default;
+$color-btn-disabled-bg: $color-neutral-gray-07 !default;
+
+/** Form colors
+  * 
+  */
+$color-form: $color-neutral-gray-93 !default;
+$color-form-bg: $color-neutral-white !default;
+$color-form-border: $color-neutral-gray-73 !default;
+$color-form-border-focus: $color-neutral-gray-93 !default;
+$color-form-border-error: $color-utility-error !default;
+$color-form-label: $color-neutral-gray-93 !default;
+$color-form-info: $color-neutral-gray-73;
+$color-form-placeholder: $color-neutral-gray-50;
+
+/** Font Family
+ * 
+ */
+$font-family-primary: 'Neue Haas Grotesk Display Pro', sans-serif;
+$font-family-secondary: 'Share Tech Mono', serif;
+
+/** Font Sizing
+ * 
+ */
+$global-font-size: rem-calc(16px);
+// TO DO - Add different sizing based on global size
+
+/** Line Height
+ * 
+ */
+$line-height-base: 1.6;
+
+/**
+ * Border widths
+ */
+$border-width: 1px;
+$button-border-width: 2px;
+
+/**
+ * Border radius
+ */
+$border-radius: 8px;
+
