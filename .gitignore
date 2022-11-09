@@ -11,6 +11,7 @@ helpers
 .cache/
 coverage/
 *.log
+dependencyGraph.json
 
 # OS generated files
 .DS_Store
@@ -19,5 +20,4 @@ coverage/
 .Trashes
 ehthumbs.db
 Thumbs.db
-source/_meta/*
-dependencyGraph.json
+

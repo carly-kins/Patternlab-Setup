@@ -9,7 +9,6 @@ module.exports = function(grunt) {
       clean: {
         folder: ['pattern_exports/', 'public/'],
         css: ['source/css/style.css', 'source/css/style.css.map'],
-        meta: ['source/_meta/*'],
         js: ['source/js/main.js']
       },
 
@@ -33,38 +32,38 @@ module.exports = function(grunt) {
           src: ['*.js'],
           dest: 'pattern_exports/js/'
         },
-        main: {
+        images: {
           expand: true,
-          cwd: 'source',
-          src: ['*.ico', '/images/*.svg'],
+          cwd: 'public/images/',
+          src: ['**'],
           dest: 'pattern_exports/images/'
         },
-        meta: { 
-          expand: true,
-          flatten: true,
-          cwd: 'source',
-          src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
-          dest: 'source/_meta/',
-        },
-        mustache: { // Make .mustache match .hbs
-          expand: true,
-          flatten: true,
-          cwd: 'source',
-          src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
-          dest: 'source/_meta/',
-          rename: function(dest, matchedSrcPath) {
-            if (matchedSrcPath.substring(0, 1) == '_') {
-              return dest + matchedSrcPath.replace('.hbs', '.mustache');
-            }
-          }
-        }
+        //meta: { 
+          //expand: true,
+          //flatten: true,
+          //cwd: 'source',
+          //src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
+          //dest: 'source/_meta/',
+        //},
+        //mustache: { // Make .mustache match .hbs
+          //expand: true,
+          //flatten: true,
+          //cwd: 'source',
+          //src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
+          //dest: 'source/_meta/',
+          //rename: function(dest, matchedSrcPath) {
+            //if (matchedSrcPath.substring(0, 1) == '_') {
+              //return dest + matchedSrcPath.replace('.hbs', '.mustache');
+            //}
+          //}
+        //}
       },
 
       imagemin: {
         dynamic: {
           files: [{
             expand: true,
-            cwd: 'public/images/',
+            cwd: 'pattern_exports/images/',
             src: ['**/*.{png,jpg,gif}'],
             dest: 'pattern_exports/images/'
           }]
@@ -98,8 +97,10 @@ module.exports = function(grunt) {
       }
 
   });
+
   // Tasks
   grunt.registerTask('default', ['clean']);
-  grunt.registerTask('source', ['sass', 'copy:meta', 'copy:mustache', 'uglify']);
-  grunt.registerTask('public', ['cssmin', 'imagemin', 'copy:main', 'copy:js'])
+  grunt.registerTask('source', ['sass', 'uglify']);
+  grunt.registerTask('public', ['cssmin', 'copy:images', 'imagemin', 'copy:js']);
+
 };
