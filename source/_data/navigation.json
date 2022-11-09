@@ -1,0 +1,33 @@
+{
+    "primaryNav": {
+        "toggleID" : "NavbarCollapse",
+        "navItems" : [
+        {
+            "label" : "development",
+            "url" : "#development"
+        },
+        {
+            "label" : "cover letter",
+            "url" : "#coverletter"
+        }
+        ]
+
+    },
+    "footerNav" : [
+        {
+            "url" : "https://github.com/carly-kins",
+            "src" : "../../images/Github.svg",
+            "alt" : "Github"
+        },
+        {
+            "url" : "https://www.linkedin.com/in/carly-anne-wooten/",
+            "src" : "../../images/Linkedin.svg",
+            "alt" : "Linkedin"
+        },
+        {
+            "url" : "https://twitter.com/carly_kins_/",
+            "src" : "../../images/twitter.svg",
+            "alt" : "Twitter"
+        }
+    ]
+}

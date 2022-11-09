@@ -1,0 +1,29 @@
+{
+	"jsFile": "../../js/main.js",
+	"cssFile": "../../css/style.css",
+	"homepage": "#",
+	"company": {
+		"name": "Carly Anne Art",
+		"url": "http://carlyanneart.com"
+	},
+	
+	"url": "#",
+	
+	"logo" : 
+	{
+		"logoImg": "../../images/logo.svg"
+	},
+	"iconPath": "../../images/",
+    "icon": "play",
+    "icons": [
+        {
+            "iconPath": "../../images/",
+            "icon": "play"
+        },
+        {
+            "iconPath": "../../images/",
+            "icon": "pause"
+        }
+    ]
+    
+}

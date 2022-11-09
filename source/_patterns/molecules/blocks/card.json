@@ -1,0 +1,14 @@
+{   
+	"title": "Title ipsum dolor sit (39 characters)",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+	"cardImage": "",
+	"button" : {
+		"styleModifier" : "c-btn__secondary",
+		"buttonTag" : true,
+		"linkTag" : false,
+		"dataElement": true,
+		"url" : "",
+		"buttonText" : "Button",
+		"id" : ""
+	}
+}

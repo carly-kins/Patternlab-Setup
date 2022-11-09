@@ -1,0 +1,37 @@
+.navbar {
+	justify-content: end;
+
+	@include lg() {
+		justify-content: unset;
+	}
+}	
+	
+.navbar-nav {
+	align-items: end;
+}
+
+.nav-item {
+	display: flex;
+	align-items: center;
+	counter-increment: step-counter;
+
+	@include lg() {
+		&:before {
+			content: "0"counter(step-counter);
+			font-size: 80%;
+			font-family: $font-family-secondary;
+			color: $rich-black-fogra-29;
+			font-weight: bold;
+			margin: 0 rem-calc(5px) 0 rem-calc(30px);
+		}
+		
+		&:after {
+			content: '';
+			flex: 1;
+			height: 1px;
+			width: 80px;
+			background-color: $english-lavender;
+			margin-left: rem-calc(10px);
+		}
+	}
+}

@@ -47,10 +47,22 @@ module.exports = function(grunt) {
         },
         applib: {
           src: [
-            'node_modules/jquery/dist/jquery.slim.min.js',
-            'node_modules/@popperjs/core/dist/umd/popper.min.js',
-            'node_modules/bootstrap/dist/js/bootstrap.min.js',
-            'node_modules/bootstrap/js/dist/dropdown.js',
+            //'node_modules/jquery/dist/jquery.slim.min.js',
+            //'node_modules/@popperjs/core/dist/umd/popper.min.js',
+            //'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            //'node_modules/bootstrap/js/dist/alert.js',
+            //'node_modules/bootstrap/js/dist/base-component.js',
+            //'node_modules/bootstrap/js/dist/button.js',
+            //'node_modules/bootstrap/js/dist/carousel.js',
+            //'node_modules/bootstrap/js/dist/collapse.js',
+            //'node_modules/bootstrap/js/dist/dropdown.js',
+            //'node_modules/bootstrap/js/dist/modal.js',
+            //'node_modules/bootstrap/js/dist/offcanvas.js',
+            //'node_modules/bootstrap/js/dist/popover.js',
+            //'node_modules/bootstrap/js/dist/scrollspy.js',
+            //'node_modules/bootstrap/js/dist/tab.js',
+            //'node_modules/bootstrap/js/dist/toast.js',
+            //'node_modules/bootstrap/js/dist/tooltip.js',
             'source/js/custom_js/*.js'
           ],
           dest: 'source/js/main.js'
@@ -70,8 +82,8 @@ module.exports = function(grunt) {
       copy: {
         main: {
           expand: true,
-          cwd: 'public',
-          src: ['*.ico', '*.svg'],
+          cwd: 'source',
+          src: ['*.ico', '/images/*.svg'],
           dest: 'pattern_exports/images/'
         },
         js: {
@@ -88,8 +100,8 @@ module.exports = function(grunt) {
           src: ['**/head.hbs', '**/foot.hbs'],
           dest: 'source/_meta/',
           rename: function(dest, matchedSrcPath) {
-            if (matchedSrcPath.substring(0, 1) !== '_') {
-              return dest + '_' + matchedSrcPath.replace('.hbs', '.mustache');
+            if (matchedSrcPath.substring(0, 1) == '_') {
+              return dest + matchedSrcPath.replace('.hbs', '.mustache');
             }
           }
         },

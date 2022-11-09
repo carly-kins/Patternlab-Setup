@@ -1,3 +1,17 @@
-<div>Primary font: "HelveticaNeue", "Helvetica", "Arial", sans-serif;</div>
-<div><em>Primary font italic: "HelveticaNeue", "Helvetica", "Arial", sans-serif;</em></div>
-<div><strong>Primary font bold: "HelveticaNeue", "Helvetica", "Arial", sans-serif;</strong></div>
+{{#FontNames }}
+<p class="primary">
+    Primary font: {{ primary }};<br>
+    <em>Primary font italic: {{ primary }};</em><br>
+    <strong>Primary font bold: {{ primary }};</strong><br>
+</p>
+
+<hr />
+
+<p class="secondary">
+    Secondary font: {{ secondary }};<br>
+    <em>Secondary font italic: {{ secondary }};</em><br>
+    <strong>Secondary font bold: {{ secondary }};</strong><br>
+</p>
+{{/FontNames}}
+
+{{#meta}}<small>{{{ Description }}}</small>{{/meta}}

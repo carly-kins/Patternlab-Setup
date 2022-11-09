@@ -1,0 +1,8 @@
+{
+    "button" : {
+        "styleModifier" : "c-btn__primary",
+        "url" : "",
+        "buttonText" : "Button",
+        "id" : ""
+    }
+}

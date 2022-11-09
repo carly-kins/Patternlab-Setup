@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    #CARD LIST
+\*------------------------------------*/
+
+/**
+ * An unordered list of cards 
+ */
+.c-card-list {
+	margin: 0 auto ($spacer * 2);
+
+	&__item {
+		padding: rem-calc(15px); 
+	}
+}
+
+

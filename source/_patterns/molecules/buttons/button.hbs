@@ -1,17 +1,11 @@
-<{{# buttonTag }}button{{/ buttonTag }}{{# linkTag }}a href="{{ url }}"{{/ linkTag }} class="c-btn {{ styleModifier }}" {{# buttonTitle}}title="{{ buttonTitle }}"{{/ buttonTitle}}{{# buttonIsToggle }} data-btn-icon-swap="{{ iconPath }}{{ buttonIconSwap }}"{{/ buttonIsToggle }}>
+{{#button}}
+<button href="{{ url }}" class="c-btn {{ styleModifier }}" {{#dataElement}}data="{{ buttonText }}" {{/dataElement}}{{#if id }}id="{{ id }}" {{/ if }}>
+{{^ dataElement }}{{ buttonText }}{{/ dataElement }}
 
+{{#if buttonIcon }}
     <div class="c-btn__inner">
-
-        {{#if buttonIcon }}
-        <svg class="c-btn__icon {{#if buttonIsToggle }}js-btn-icon{{/ if }}">
-            <use href="{{ iconPath }}#{{ buttonIcon }}"></use>
-        </svg>
-        {{/ if }}
-
-        {{#if buttonText }}
-        {{ buttonText }}
-        {{/ if }}
-
-    </div><!--end c-btn__inner-->
-
-</{{# buttonTag }}button{{/ buttonTag }}{{# linkTag }}a{{/ linkTag }}><!-- end c-btn -->
+        {{ buttonTextIcon }}
+    </div>
+{{/ if }}
+</button>
+{{/button}}

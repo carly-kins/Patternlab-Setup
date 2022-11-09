@@ -1,9 +1,10 @@
+{{#header}}
 <div class="c-page-header {{ styleModifier }}">
 
-    <h1 class="c-page-header__title">{{{ page.title }}}</h1>
+    <h1 class="c-page-header__title" id="{{ id }}">{{ title }}</h1>
 
-    {{#if page.description }}
-    <p class="c-page-header__description">{{{ page.description }}}</p>
+    {{#if description }}
+    <p class="c-page-header__description">{{ description }}</p>
     {{/ if }}
-
-</div><!-- end c-page-header -->
+</div>
+{{/header}}

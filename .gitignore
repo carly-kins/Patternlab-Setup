@@ -7,7 +7,6 @@ sass-cache
 public
 source/css/style.css
 source/css/style.css.map
-pattern_exports
 helpers
 .cache/
 coverage/
@@ -22,3 +21,4 @@ ehthumbs.db
 Thumbs.db
 source/_meta/_foot.mustache
 source/_meta/_head.mustache
+dependencyGraph.json
