@@ -13,8 +13,65 @@ module.exports = function(grunt) {
         js: ['source/js/main.js']
       },
 
-      // Turns SCSS to CSS 
-      sass: {
+      cssmin: { // Minifies CSS
+        sitecss: {
+          options: {
+            banner: ''
+          },
+          files: {
+            'pattern_exports/css/style.css': [
+              'public/css/style.css'
+            ]
+          }
+        }
+      },
+
+      copy: {
+        js: {
+          expand: true,
+          cwd: 'public/js/',
+          src: ['*.js'],
+          dest: 'pattern_exports/js/'
+        },
+        main: {
+          expand: true,
+          cwd: 'source',
+          src: ['*.ico', '/images/*.svg'],
+          dest: 'pattern_exports/images/'
+        },
+        meta: { 
+          expand: true,
+          flatten: true,
+          cwd: 'source',
+          src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
+          dest: 'source/_meta/',
+        },
+        mustache: { // Make .mustache match .hbs
+          expand: true,
+          flatten: true,
+          cwd: 'source',
+          src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
+          dest: 'source/_meta/',
+          rename: function(dest, matchedSrcPath) {
+            if (matchedSrcPath.substring(0, 1) == '_') {
+              return dest + matchedSrcPath.replace('.hbs', '.mustache');
+            }
+          }
+        }
+      },
+
+      imagemin: {
+        dynamic: {
+          files: [{
+            expand: true,
+            cwd: 'public/images/',
+            src: ['**/*.{png,jpg,gif}'],
+            dest: 'pattern_exports/images/'
+          }]
+        }
+      },
+
+      sass: { // Turns SCSS to CSS 
         dist: {
           options: {
             implementation: sass,
@@ -27,22 +84,8 @@ module.exports = function(grunt) {
           }
         }
       },
-      //Build process
-      // Minifies CSS
-      cssmin: {
-        sitecss: {
-          options: {
-            banner: ''
-          },
-          files: {
-            'pattern_exports/css/style.css': [
-              'public/css/style.css'
-            ]
-          }
-        }
-      },
-      // Combines and condenses JS
-      uglify: {
+      
+      uglify: { // Combines and condenses JS
         options: {
           compress: true
         },
@@ -52,54 +95,10 @@ module.exports = function(grunt) {
           ],
           dest: 'source/js/main.js'
         }
-      },
-      imagemin: {
-        dynamic: {
-          files: [{
-            expand: true,
-            cwd: 'public/images/',
-            src: ['**/*.{png,jpg,gif}'],
-            dest: 'pattern_exports/images/'
-          }]
-        }
-      },
-      // Copy Grunt build processesses.
-      copy: {
-        main: {
-          expand: true,
-          cwd: 'source',
-          src: ['*.ico', '/images/*.svg'],
-          dest: 'pattern_exports/images/'
-        },
-        js: {
-          expand: true,
-          cwd: 'public/js/',
-          src: ['*.js'],
-          dest: 'pattern_exports/js/'
-        },
-      // Make .mustache match .hbs
-        meta: {
-          expand: true,
-          flatten: true,
-          cwd: 'source',
-          src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
-          dest: 'source/_meta/',
-        },
-        mustache: {
-          expand: true,
-          flatten: true,
-          cwd: 'source',
-          src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
-          dest: 'source/_meta/',
-          rename: function(dest, matchedSrcPath) {
-            if (matchedSrcPath.substring(0, 1) == '_') {
-              return dest + matchedSrcPath.replace('.hbs', '.mustache');
-            }
-          }
-        },
-    }
+      }
+
   });
-  // Default task(s).
+  // Tasks
   grunt.registerTask('default', ['clean']);
   grunt.registerTask('source', ['sass', 'copy:meta', 'copy:mustache', 'uglify']);
   grunt.registerTask('public', ['cssmin', 'imagemin', 'copy:main', 'copy:js'])
