@@ -1,106 +1,176 @@
 const sass = require('node-sass');
 
-module.exports = function(grunt) {
-    require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+module.exports = function (grunt) {
+  require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
+  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
-    // Project configuration.
-    grunt.initConfig({
-      pkg: grunt.file.readJSON('package.json'),
-      clean: {
-        folder: ['pattern_exports/', 'public/'],
-        css: ['source/css/style.css', 'source/css/style.css.map'],
-        js: ['source/js/main.js']
-      },
+  grunt.initConfig({
+    clean: {
+      folder: ['pattern_exports/', 'integrated/', 'public/'],
+    },
 
-      cssmin: { // Minifies CSS
-        sitecss: {
-          options: {
-            banner: ''
-          },
-          files: {
-            'pattern_exports/css/style.css': [
-              'public/css/style.css'
-            ]
-          }
-        }
-      },
+    // DEV TASKS
 
-      copy: {
-        js: {
-          expand: true,
-          cwd: 'public/js/',
-          src: ['*.js'],
-          dest: 'pattern_exports/js/'
-        },
-        images: {
-          expand: true,
-          cwd: 'public/images/',
-          src: ['**'],
-          dest: 'pattern_exports/images/'
-        },
-        //meta: { 
-          //expand: true,
-          //flatten: true,
-          //cwd: 'source',
-          //src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
-          //dest: 'source/_meta/',
-        //},
-        //mustache: { // Make .mustache match .hbs
-          //expand: true,
-          //flatten: true,
-          //cwd: 'source',
-          //src: ['**/tokens/_head.hbs', '**/tokens/_foot.hbs'],
-          //dest: 'source/_meta/',
-          //rename: function(dest, matchedSrcPath) {
-            //if (matchedSrcPath.substring(0, 1) == '_') {
-              //return dest + matchedSrcPath.replace('.hbs', '.mustache');
-            //}
-          //}
-        //}
-      },
-
-      imagemin: {
-        dynamic: {
-          files: [{
-            expand: true,
-            cwd: 'pattern_exports/images/',
-            src: ['**/*.{png,jpg,gif}'],
-            dest: 'pattern_exports/images/'
-          }]
-        }
-      },
-
-      sass: { // Turns SCSS to CSS 
-        dist: {
-          options: {
-            implementation: sass,
-            outputStyle: 'compact',
-            sourceComments: false,
-            sourceMap: true
-          },
-          files: {
-            'source/css/style.css': 'source/css/style.scss'
-          }
-        }
-      },
-      
-      uglify: { // Combines and condenses JS
+    // Live PL build modified from https://gist.github.com/lrobeson/433267cbebb8377d3c5a
+    sass: { 
+      patternlab: {
         options: {
-          compress: true
+          implementation: sass,
+          outputStyle: 'compact',
+          sourceComments: false,
+          sourceMap: true
         },
-        applib: {
-          src: [
-            'source/js/custom_js/*.js'
-          ],
-          dest: 'source/js/main.js'
+        files: {
+          'source/css/style.css': 'source/sass/style.scss'
+        }
+      },
+      integrate: {
+        options: {
+          implementation: sass,
+          outputStyle: 'compact',
+          sourceComments: false,
+          sourceMap: true
+        },
+        files: {
+          'integrated/css/style.css': 'src/sass/style-master.scss'
         }
       }
+    },
 
+    // Run some tasks in parallel to speed up the build process
+    concurrent: {
+      patternlab: {
+        tasks: [
+          'watch:patternlab', // use Grunt Watch task for Sass file changes
+          'shell:patternlabStart', // use Pattern Lab's native Watch task for HTML & CSS changes
+        ],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
+    },
+    shell: {
+      patternlabStart: {
+        command: [
+          'npm run pl:serve', 
+        ].join('&&')
+      },
+      patternlabBuild: {
+        command: [
+          'npm run pl:build', 
+        ].join('&&')
+      },
+    },
+
+    // Watches files for changes and runs tasks based on the changed files
+    watch: {
+      patternlab: {
+        files: ['**/*.scss'],
+        tasks: ['sass:patternlab'],
+        options: {
+          spawn: false,
+        }
+      },
+    },
+
+    // PRODUCTION BUILD TASKS
+
+    // CSS
+    cssmin: {
+      sitecss: {
+        options: {
+          banner: ''
+        },
+        files: {
+          'integrated/css/style.css': [
+            'public/css/style.css'
+          ]
+        }
+      },
+      src: {
+        options: {
+          banner: ''
+        },
+        files: {
+          'integrated/css/style.css': [
+            'source/css/style.css'
+          ]
+        }
+      }
+    },
+    stylelint: {
+      options: {
+        configFile: 'config/.stylelintrc.json',
+        formatter: 'string',
+        ignoreDisables: false,
+        failOnError: true,
+        outputFile: '',
+        reportNeedlessDisables: false,
+        fix: false,
+        syntax: ''
+      },
+      src: [
+              'source/**/*.scss',
+          ]
+      },
+
+    // JavaScript
+    uglify: {
+      options: {
+        compress: true
+      },
+      applib: {
+        src: [
+          'public/js/custom_js/*.js'
+        ],
+        dest: 'integrated/js/main.js'
+      }
+    },
+    eslint: {
+      options: {
+        overrideConfigFile: 'config/.eslintrc.json',
+      },
+      target: ['public/js/**/*.js']
+    },
+
+    // Copy to integrated, minify
+    copy: { 
+      public: {
+        expand: true,
+        cwd: 'public',
+        src: ['fonts/*', 'images/*', 'favicon.ico'],
+        dest: 'integrated/',
+      }
+    },
+    prettify: {
+      options: {
+        config: 'config/.prettifyrc.json'
+      },
+      // Prettify a directory of files
+      all: {
+        expand: true,
+        cwd: 'public',
+        ext: '.html',
+        src: ['patterns/**/*.html'],
+        dest: 'integrated/'
+      },
+    },
+    imagemin: { 
+      dynamic: {
+        files: [{ 
+          expand: true,
+          cwd: 'integrated/images/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'integrated/images/'
+        }]
+      }
+    }
   });
 
-  // Tasks
   grunt.registerTask('default', ['clean']);
-  grunt.registerTask('source', ['sass', 'uglify']);
-  grunt.registerTask('public', ['cssmin', 'copy:images', 'imagemin', 'copy:js']);
-
+  grunt.registerTask('dev', ['sass', 'concurrent:patternlab',]);
+  grunt.registerTask('build', ['clean', 'stylelint', 'shell:patternlabBuild', 'eslint', 'copy:public', 'uglify', 'cssmin:sitecss', 'imagemin', 'prettify' ]);
+  grunt.registerTask('buildCSS', ['stylelint', 'cssmin:src']);
+  grunt.registerTask('buildJS', ['eslint', 'uglify']);
 };
