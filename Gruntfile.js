@@ -24,17 +24,6 @@ module.exports = function (grunt) {
         files: {
           'source/css/style.css': 'source/sass/style.scss'
         }
-      },
-      integrate: {
-        options: {
-          implementation: sass,
-          outputStyle: 'compact',
-          sourceComments: false,
-          sourceMap: true
-        },
-        files: {
-          'integrated/css/style.css': 'src/sass/style-master.scss'
-        }
       }
     },
 
@@ -163,7 +152,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['clean']);
   grunt.registerTask('dev', ['sass', 'concurrent:patternlab',]);
-  grunt.registerTask('build', ['clean', 'stylelint', 'shell:patternlabBuild', 'eslint', 'copy:public', 'uglify', 'cssmin:sitecss', 'imagemin', 'prettify' ]);
-  grunt.registerTask('buildCSS', ['stylelint', 'cssmin:src']);
+  grunt.registerTask('build', ['clean', 'stylelint', 'sass', 'shell:patternlabBuild', 'eslint', 'copy:public', 'uglify', 'cssmin:sitecss', 'imagemin', 'prettify' ]);
+  grunt.registerTask('buildCSS', ['stylelint', 'sass', 'cssmin:src']);
   grunt.registerTask('buildJS', ['eslint', 'uglify']);
 };
