@@ -46,7 +46,10 @@
     "node-sass": "^7.0.3",
     "postcss-cli": "^10.0.0",
     "stylelint": "^14.15.0",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^29.0.0",
+    "stylelint-scss": "^4.3.0",
     "time-grunt": "^2.0.0"
   }
 }
