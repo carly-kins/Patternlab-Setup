@@ -1,6 +1,14 @@
 {
-	"jsFile": "../../js/main.js",
-	"cssFile": "../../css/style.css",
+	"meta": {
+		"title" : "",
+		"sylesheetSmall" : "../../css/small.css",
+		"sylesheetMedium" : "",
+		"sylesheetLarge" : "",
+		"sylesheetXl" : "",
+		"bootstrapCDN": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js",
+		"jsFile": "../../js/main.js"
+	},
+	
 	"homepage": "#",
 	"company": {
 		"name": "Carly Anne Art",

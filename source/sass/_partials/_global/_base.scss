@@ -1,8 +1,6 @@
-/*------------------------------------*\
-    #RESET
-\*------------------------------------*/
+// This is a file to RESET common variable in the HTML to make life easier :) 
 
- * {
+* {
 	box-sizing: border-box;
 }
 
@@ -25,4 +23,19 @@ img {
 
 .secondary {
   font-family: $font-family-secondary;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.vishidden { // Completely remove from the flow but leave available to screen readers.
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
 }

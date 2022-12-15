@@ -23,10 +23,10 @@
 		padding: 15%;
 		color: $color-neutral-white; 
 
-		@include md {
-			padding: rem-calc(80px);
-			justify-content: space-evenly;
-		}
+		//@include md {
+		//	padding: rem-calc(80px);
+		//	justify-content: space-evenly;
+		//}
 		
 		.card {
 			&__title,&__excerpt {

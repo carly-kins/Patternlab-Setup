@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {{#meta}}
     <title>{{ title }}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="{{ cssFile }}?{{ cacheBuster }}" media="all" />
+    {{#sylesheetSmall}}<link rel="stylesheet" href="{{ sylesheetSmall }}?{{ cacheBuster }}" media="all" />{{/sylesheetSmall}}
+    {{#sylesheetMedium}}<link rel="stylesheet" href="{{ sylesheetMedium }}?{{ cacheBuster }}" media="all" />{{/sylesheetMedium}}
+    {{#sylesheetLarge}}<link rel="stylesheet" href="{{ sylesheetLarge }}?{{ cacheBuster }}" media="all" />{{/sylesheetLarge}}
+    {{#sylesheetXl}}<link rel="stylesheet" href="{{ sylesheetXl }}?{{ cacheBuster }}" media="all" />{{/sylesheetXl}}
     <link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ jsFile }}" type="text/javascript"></script>
+    {{#bootstrapCDN}}<script src="{{ bootstrapCDN }}"></script>{{/bootstrapCDN}}
+    {{#jsFile}}<script src="{{ jsFile }}" type="text/javascript"></script>{{/jsFile}}
+    {{/meta}}
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     {{{ patternLabHead }}}
     <!-- End Pattern Lab -->

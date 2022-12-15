@@ -22,18 +22,10 @@ module.exports = function (grunt) {
           sourceMap: true
         },
         files: {
-          'source/css/style.css': 'source/sass/style.scss'
-        }
-      },
-      integrate: {
-        options: {
-          implementation: sass,
-          outputStyle: 'compact',
-          sourceComments: false,
-          sourceMap: true
-        },
-        files: {
-          'integrated/css/style.css': 'src/sass/style-master.scss'
+          'public/css/small.css': 'source/sass/small.scss',
+          //'public/css/med.css': 'source/sass/med.scss',
+          //'public/css/large.css': 'source/sass/large.scss',
+          //'public/css/xl.css': 'source/sass/xl.scss'
         }
       }
     },
@@ -83,19 +75,10 @@ module.exports = function (grunt) {
           banner: ''
         },
         files: {
-          'integrated/css/style.css': [
-            'public/css/style.css'
-          ]
-        }
-      },
-      src: {
-        options: {
-          banner: ''
-        },
-        files: {
-          'integrated/css/style.css': [
-            'source/css/style.css'
-          ]
+          'integrated/css/small.css': 'public/css/small.scss',
+          //'integrated/css/med.css': 'public/css/med.scss',
+          //'integrated/css/large.css': 'public/css/large.scss',
+          //'integrated/css/xl.css': 'public/css/xl.scss'
         }
       }
     },
@@ -160,6 +143,9 @@ module.exports = function (grunt) {
       }
     }
   });
+
+  grunt.registerTask('default', ['clean']);
+  grunt.registerTask('dev', ['sass', 'concurrent:patternlab',]);
   grunt.registerTask('build', ['clean', 'stylelint', 'sass', 'shell:patternlabBuild', 'eslint', 'copy:public', 'uglify', 'cssmin:sitecss', 'imagemin', 'prettify' ]);
   grunt.registerTask('buildCSS', ['stylelint', 'sass', 'cssmin:src']);
   grunt.registerTask('buildJS', ['eslint', 'uglify']);

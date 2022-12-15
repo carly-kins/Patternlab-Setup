@@ -1,38 +1,24 @@
-/*------------------------------------*\
-    #GLOBAL
-\*------------------------------------*/
-@import 'node_modules/foundation-sites/scss/util/util'; // This is for rem-calc() 
+@import "global";
+@import "_partials/_vendor/bootstrap";
 
-@import "_partials/abstracts/mixins";
-@import "_partials/abstracts/fonts";
-@import "_partials/abstracts/variables";
-@import "_partials/utilities/_base";
+// Atoms
+@import "source/_patterns/atoms/icon/icon";
 
-@import "node_modules/bootstrap/scss/_functions";
-@import "_partials/vendor/bootstrap-variables";
-@import "node_modules/bootstrap/scss/_variables";
-@import "node_modules/bootstrap/scss/_maps";
-@import "node_modules/bootstrap/scss/_mixins";
-@import "node_modules/bootstrap/scss/_utilities";
+// Molecules
+//@import "source/_patterns/molecules/buttons/button";
+//@import "source/_patterns/molecules/card/card";
+//@import "source/_patterns/molecules/footer-nav/footer-nav";
+//@import "source/_patterns/molecules/logo/logo";
+//@import "source/_patterns/molecules/page-header/page-header";
+//@import "source/_patterns/molecules/primary-nav/primary-nav";
 
-/*------------------------------------*\
-    #OTHER
-\*------------------------------------*/
+// Organisms
+//@import "source/_patterns/organisms/card-list/card-list";
+//@import "source/_patterns/organisms/footer/footer";
+//@import "source/_patterns/organisms/header/header";
+//@import "source/_patterns/organisms/section/section";
+//@import "source/_patterns/organisms/text-passage/text-passage";
 
-@import "_partials/vendor/bootstrap";
+// Templates
 
-/*------------------------------------*\
-    #COMPONENTS
-\*------------------------------------*/
-
-@import "_partials/button";
-@import "_partials/card-list";
-@import "_partials/card";
-@import "_partials/footer-nav";
-@import "_partials/footer";
-@import "_partials/header";
-@import "_partials/icon";
-@import "_partials/logo";
-@import "_partials/page-header";
-@import "_partials/primary-nav";
-@import "_partials/section";
+// Pages
