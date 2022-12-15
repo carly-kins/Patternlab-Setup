@@ -101,14 +101,7 @@ module.exports = function (grunt) {
     },
     stylelint: {
       options: {
-        configFile: 'config/.stylelintrc.json',
-        formatter: 'string',
-        ignoreDisables: false,
-        failOnError: true,
-        outputFile: '',
-        reportNeedlessDisables: false,
-        fix: false,
-        syntax: ''
+        configFile: 'config/.stylelintrc.yml',
       },
       src: [
               'source/**/*.scss',
