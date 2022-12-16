@@ -3,6 +3,9 @@
   "cleanPublic": true,
   "defaultPattern": "all",
   "defaultShowPatternInfo": false,
+  "transformedAssetTypes": [
+    "scss"
+  ],
   "ishControlsHide": {
     "s": false,
     "m": false,

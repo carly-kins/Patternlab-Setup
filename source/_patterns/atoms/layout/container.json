@@ -1,0 +1,9 @@
+{
+    "container" : {
+        "size": false,
+        "styleModifier" : "pl-gray-demo-background",
+        "description": {
+            "text" : "Bootstrap Container (Normal)"
+        }
+    }
+}
