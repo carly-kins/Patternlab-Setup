@@ -1,0 +1,42 @@
+{
+    "image" : {
+        "src" : "https://picsum.photos/400/300",
+        "alt" : "placeholder image."
+    },
+
+    "icon" : {
+        "iconPath": "../../images/",
+        "iconName": "play"
+    },
+
+    "icons": [
+        {
+            "icon": {
+                "iconPath": "../../images/",
+                "iconName": "play"
+            }
+        },
+        {
+            "icon": {
+                "iconPath": "../../images/",
+                "iconName": "pause"
+            }
+        }
+    ],
+
+    "logo" : {
+        "src" : "../../images/logo.svg",
+        "alt" : "logo image."
+    },
+
+
+
+
+	"homepage": "#",
+	"company": {
+		"name": "Carly Anne Art",
+		"url": "http://carlyanneart.com"
+	},
+	
+	"url": "#"
+}

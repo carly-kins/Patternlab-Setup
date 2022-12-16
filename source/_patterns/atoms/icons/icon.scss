@@ -1,4 +1,6 @@
-.c-icon {
+$block: "icon";
+
+.#{$block} {
 	height: 1rem;
 	width: 1rem;
 	color: $color-neutral-black;

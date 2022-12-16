@@ -1,37 +1,10 @@
 {
-	"meta": {
-		"title" : "",
-		"sylesheetSmall" : "../../css/small.css",
-		"sylesheetMedium" : "",
-		"sylesheetLarge" : "",
-		"sylesheetXl" : "",
-		"bootstrapCDN": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js",
-		"jsFile": "../../js/main.js"
-	},
-	
-	"homepage": "#",
-	"company": {
-		"name": "Carly Anne Art",
-		"url": "http://carlyanneart.com"
-	},
-	
-	"url": "#",
-	
-	"logo" : 
-	{
-		"logoImg": "../../images/logo.svg"
-	},
-	"iconPath": "../../images/",
-    "icon": "play",
-    "icons": [
-        {
-            "iconPath": "../../images/",
-            "icon": "play"
-        },
-        {
-            "iconPath": "../../images/",
-            "icon": "pause"
-        }
-    ]
-    
+	"title" : "",
+	"sylesheetSmall" : "../../css/small.css",
+	"sylesheetMedium" : "",
+	"sylesheetLarge" : "",
+	"sylesheetXl" : "",
+	"bootstrapCDN": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js",
+	"jsFile": "../../js/main.js"
+
 }
