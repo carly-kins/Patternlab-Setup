@@ -3,9 +3,6 @@
   "cleanPublic": true,
   "defaultPattern": "all",
   "defaultShowPatternInfo": false,
-  "transformedAssetTypes": [
-    "scss"
-  ],
   "ishControlsHide": {
     "s": false,
     "m": false,
@@ -61,7 +58,7 @@
       "js": "./source/js",
       "images": "./source/images",
       "fonts": "./source/fonts",
-      "css": "./source/css"
+      "css": "./source/styleguide/css"
     },
     "public": {
       "root": "public/",
@@ -83,7 +80,7 @@
   ],
   "patternExportAll": false,
   "patternExportDirectory": "pattern_exports",
-  "patternExportPatternPartials": ["pages-blog-post"],
+  "patternExportPatternPartials": [""],
   "patternExportPreserveDirectoryStructure": true,
   "patternExportRaw": false,
   "patternMergeVariantArrays": false,
