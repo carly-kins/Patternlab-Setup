@@ -4,7 +4,7 @@
  * These styles will not be your production CSS.
  */
 
-:root {
+ :root {
 	--pl-border-color: #dddddd;
 	--pl-border-radius: 8px;
 	--pl-grid-gap: 1rem;
@@ -59,13 +59,6 @@
 .sg-label {
 	font-size: 90%;
 	line-height: 1;
-}
-
-.pl-gray-demo-background {
-	border: 1px solid var(--pl-border-color);
-	text-align: center;
-	padding: 0.3em;
-	margin: 0.5em auto;
 }
 
 /**
