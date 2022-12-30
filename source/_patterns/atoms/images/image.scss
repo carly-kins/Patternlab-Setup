@@ -1,3 +1,5 @@
-$block: "";
+$block: "image";
 
-.#{$block} {}
+.#{$block} {
+    height: 100%;
+}
