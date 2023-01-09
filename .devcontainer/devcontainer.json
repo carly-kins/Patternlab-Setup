@@ -18,7 +18,7 @@
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
-		  "extensions": ["mhutchie.git-graph"]
+		  "extensions": ["mhutchie.git-graph", "dawhite.mustache", "itsmeadarsh.vsc-handlebars-ext"]
 		}
 	  }
 	  
