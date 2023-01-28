@@ -10,7 +10,7 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	// "forwardPorts":
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
@@ -26,8 +26,13 @@
 		}
 	  },
 	"settings": { 
-		"terminal.integrated.defaultProfile.linux": "zsh"
-    		}
+		"terminal.integrated.defaultProfile.osx": "bash",
+  		"terminal.integrated.profiles.osx": {
+    			"bash": {
+      				"path": "bash",
+      				"args": ["-l"]
+    			}
+  			}
 	
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root" "terminal.integrated.defaultProfile.linux": "zsh"
