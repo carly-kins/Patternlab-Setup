@@ -26,8 +26,8 @@
 		}
 	  },
 	"settings": { 
-		"terminal.integrated.defaultProfile.osx": "bash",
-  		"terminal.integrated.profiles.osx": {
+		"terminal.integrated.defaultProfile.linux": "bash",
+  		"terminal.integrated.profiles.linux": {
     			"bash": {
       				"path": "bash",
       				"args": ["-l"]
