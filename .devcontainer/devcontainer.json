@@ -4,58 +4,47 @@
 	"name": "Node.js",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile | Other neat setup for docker outside docker https://github.com/devcontainers/templates/tree/main/src/docker-outside-of-docker
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-16",
-	"postAttachCommand":  "npm install",
-
+	"postAttachCommand": "npm install",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "npm install -g grunt-cli",
-
 	// Configure tool-specific properties.
-	
 	"customizations": {
 		"vscode": {
-		  "extensions": [
-			"mhutchie.git-graph", 
-			"dawhite.mustache", 
-			"itsmeadarsh.vsc-handlebars-ext",
-			"dawhite.mustache",
-			"andrejunges.Handlebars", 
-			"catppuccin.catppuccin-vsc"
-		]
+			"extensions": [
+				"mhutchie.git-graph",
+				"dawhite.mustache",
+				"itsmeadarsh.vsc-handlebars-ext",
+				"dawhite.mustache",
+				"andrejunges.Handlebars",
+				"catppuccin.catppuccin-vsc"
+			]
 		}
-	  },
-	"settings": { 
-		"terminal.integrated.defaultProfile.linux": "zsh",
-    	"terminal.integrated.fontSize": 13
 	},
-	
-	// use Mocha as the base
-    	"workbench.colorTheme": "Catppuccin Mocha",
-    	// pink as the accent color
-    	"catppuccin.accentColor": "pink",
-    	// make Mocha specifically very dark
-    	// (this preserves other flavours!)
-    	"catppuccin.colorOverrides": {
-        	"mocha": {
-            	"base": "#0d1117",
-            	"mantle": "#21262d",
-            	"crust": "#21262d"
-        	}
-    	},
-    	// use your accent (pink) on the statusBar as well
-    	"catppuccin.customUIColors": {
-        	"mocha": {
-            	"statusBar.foreground": "accent"
-        	}
-    	}
-	
+	"settings": {
+		"editor.minimap.enabled": false,
+		"terminal.integrated.defaultProfile.linux": "zsh",
+		"terminal.integrated.fontSize": 13,
+		"workbench.colorTheme": "Catppuccin Mocha",
+		"settingsSync.ignoredExtensions": [],
+		"catppuccin.accentColor": "pink",
+		"catppuccin.colorOverrides": {
+			"mocha": {
+				"base": "#0d1117",
+				"mantle": "#21262d",
+				"crust": "#21262d"
+			}
+		},
+		"catppuccin.customUIColors": {
+			"mocha": {
+				"statusBar.foreground": "accent"
+			}
+		}
+	}
+
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root" 
-	  
 }
-	
