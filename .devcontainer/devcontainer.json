@@ -4,7 +4,7 @@
 	"name": "Node.js",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile | Other neat setup for docker outside docker https://github.com/devcontainers/templates/tree/main/src/docker-outside-of-docker
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-16",
-	//"postAttachCommand": "npm install -g grunt-cli && npm install",
+	"postAttachCommand":  "npm install",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -13,7 +13,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "npm install -g grunt-cli",
 
 	// Configure tool-specific properties.
 	
