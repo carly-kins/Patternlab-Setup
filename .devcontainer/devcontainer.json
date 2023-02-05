@@ -21,30 +21,29 @@
 				"dawhite.mustache",
 				"andrejunges.Handlebars",
 				"catppuccin.catppuccin-vsc"
-			]
-		}
-	},
-	"settings": {
-		"editor.minimap.enabled": false,
-		"terminal.integrated.defaultProfile.linux": "zsh",
-		"terminal.integrated.fontSize": 13,
-		"workbench.colorTheme": "Catppuccin Mocha",
-		"settingsSync.ignoredExtensions": [],
-		"catppuccin.accentColor": "pink",
-		"catppuccin.colorOverrides": {
-			"mocha": {
-				"base": "#0d1117",
-				"mantle": "#21262d",
-				"crust": "#21262d"
-			}
-		},
-		"catppuccin.customUIColors": {
-			"mocha": {
-				"statusBar.foreground": "accent"
+			],
+			"settings": {
+				"editor.minimap.enabled": false,
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"terminal.integrated.fontSize": 13,
+				"workbench.colorTheme": "Catppuccin Mocha",
+				"settingsSync.ignoredExtensions": [],
+				"catppuccin.accentColor": "pink",
+				"catppuccin.colorOverrides": {
+					"mocha": {
+						"base": "#0d1117",
+						"mantle": "#21262d",
+						"crust": "#21262d"
+					}
+				},
+				"catppuccin.customUIColors": {
+					"mocha": {
+						"statusBar.foreground": "accent"
+					}
+				}
 			}
 		}
 	}
-
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root" 
 }
