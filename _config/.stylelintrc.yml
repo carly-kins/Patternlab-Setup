@@ -15,10 +15,8 @@ rules:
         - inside-block
 
 # Disallows
-  function-no-unknown:
-   - true
-   - ignore: 
-     - rem-calc
+  function-no-unknown: 
+   - null
   selector-max-id: 2
   comment-no-empty: true
   declaration-block-no-duplicate-properties: true
@@ -54,8 +52,9 @@ rules:
     - ignore: ['blockless-at-rules', 'pseudo-classes']  
 
 # Name Formats
-  #selector-class-pattern: ^[A-Z].*$
-  #scss/at-mixin-pattern: ^[A-Z].*$  
+  selector-class-pattern: ^[A-Z].*$
+  scss/at-mixin-pattern: ^[A-Z].*$  
+  alpha-value-notation: number
 
 # Style Guide
   indentation: 4
@@ -65,9 +64,7 @@ rules:
   color-hex-case: lower
   number-leading-zero: always
   annotation-no-unknown:
-    - true
-    - ignore:
-        - default
+    - null
   unit-no-unknown:
     - true
     - ignoreUnits:
