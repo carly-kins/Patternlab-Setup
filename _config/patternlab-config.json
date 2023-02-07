@@ -1,4 +1,20 @@
 {
+  "app": {
+    "webpackDevServer": {
+      "url": "http://localhost",
+      "port": 3000,
+      "watchContentBase": true,
+      "watchOptions": {
+        "aggregateTimeout": 500,
+        "ignored": [],
+        "info-verbosity": "verbose"
+      }
+    },
+    "webpackMerge": {
+      "entry": "replace"
+    },
+    "namespace": ""
+  },
   "cacheBust": true,
   "cleanPublic": true,
   "defaultPattern": "all",
@@ -55,10 +71,10 @@
         "patternSectionSubgroup": "views/partials/patternSectionSubgroup.mustache",
         "viewall": "views/viewall.mustache"
       },
-      "js": "./source/js",
-      "images": "./source/images",
-      "fonts": "./source/fonts",
-      "css": "./source/css"
+      "js": "./source/js/",
+      "images": "./source/images/",
+      "fonts": "./source/fonts/",
+      "css": "./source/css/"
     },
     "public": {
       "root": "public/",
@@ -80,7 +96,9 @@
   ],
   "patternExportAll": false,
   "patternExportDirectory": "pattern_exports",
-  "patternExportPatternPartials": [""],
+  "patternExportPatternPartials": [
+    ""
+  ],
   "patternExportPreserveDirectoryStructure": true,
   "patternExportRaw": false,
   "patternMergeVariantArrays": false,
@@ -89,7 +107,9 @@
     "wait": 1000
   },
   "starterkitSubDir": "dist",
-  "styleGuideExcludes": ["*.scss"],
+  "styleGuideExcludes": [
+    "*.scss"
+  ],
   "theme": {
     "color": "dark",
     "density": "cozy",

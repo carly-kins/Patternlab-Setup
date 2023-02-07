@@ -1,8 +1,8 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
+  "name": "patternlab-setup",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "patternlab": "patternlab",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,11 @@
     "pl:help": "patternlab --help",
     "pl:install": "patternlab install --config ./_config/patternlab-config.json",
     "pl:serve": "patternlab serve --config ./_config/patternlab-config.json",
-    "pl:version": "patternlab --version"
+    "pl:version": "patternlab --version",
+    "webpack:version": "webpack --v",
+    "watch": "webpack --watch",
+    "start": "concurrently --kill-others \"patternlab serve --config ./_config/patternlab-config.json\" \"npx webpack watch --mode=development\"",
+    "build": "webpack && npm run pl:build"
   },
   "keywords": [],
   "author": "",
@@ -25,31 +29,40 @@
     "bootstrap": "^5.2.2",
     "foundation-sites": "^6.7.5",
     "jquery": "^3.6.1",
-    "matchdep": "^2.0.0"
+    "lodash": "^4.17.21",
+    "matchdep": "^2.0.0",
+    "styleguidekit-assets-default": "^3.5.2",
+    "styleguidekit-mustache-default": "^3.1.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
-    "grunt": "^1.5.3",
-    "grunt-concurrent": "^3.0.0",
-    "grunt-contrib-clean": "^2.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^4.0.0",
-    "grunt-contrib-imagemin": "^4.0.0",
-    "grunt-contrib-uglify": "^5.2.2",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-eslint": "^24.0.0",
-    "grunt-prettify": "^0.4.0",
-    "grunt-sass": "^3.1.0",
-    "grunt-shell": "^4.0.0",
-    "grunt-stylelint": "^0.18.0",
-    "load-grunt-tasks": "^5.1.0",
-    "node-sass": "^7.0.3",
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^7.6.0",
+    "express": "^4.18.2",
     "postcss-cli": "^10.0.0",
+    "serialize-javascript": "^3.1.0",
     "stylelint": "^14.15.0",
     "stylelint-config-recommended": "^9.0.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-scss": "^4.3.0",
-    "time-grunt": "^2.0.0"
+    "terser-webpack-plugin": "^5.3.6",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-config-utils": "^2.3.1",
+    "webpack-dev-middleware": "^6.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "write-file-webpack-plugin": "^4.5.1"
   }
 }
