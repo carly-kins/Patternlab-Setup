@@ -13,8 +13,8 @@
     "pl:version": "patternlab --version",
     "webpack:version": "webpack --v",
     "watch": "webpack --watch",
-    "start": "concurrently --kill-others \"patternlab serve --config ./_config/patternlab-config.json\" \"npx webpack watch --mode=development\"",
-    "build": "webpack && npm run pl:build"
+    "start": "concurrently \"patternlab build --config ./_config/patternlab-config.json\" \"npx webpack serve --mode=development\"",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",

@@ -4,6 +4,7 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { getIfUtils, removeEmpty } = require("webpack-config-utils");
 const TerserPlugin = require("terser-webpack-plugin");
+const PattenlabWebpackPlugin = require("./patternlab-webpack-plugin");
 
 module.exports = (env) => {
   const { ifProduction, ifDevelopment } = getIfUtils(env);
@@ -14,14 +15,17 @@ module.exports = (env) => {
     },
     devtool: ifDevelopment("inline-source-map"),
     devtool: ifProduction("source-map"),
-    //devServer: {
-      //historyApiFallback: true,
-      //open: true,
-      //compress: true,
-      //hot: true,
-      //port: 8080,
-    //},
+    devServer: {
+      historyApiFallback: true,
+      open: true,
+      compress: true,
+      hot: true,
+      port: 8080,
+    },
     plugins: removeEmpty([
+      new PattenlabWebpackPlugin({
+        command: "build",
+      }),
       new CleanWebpackPlugin({
         root: "./public",
         verbose: true,
@@ -39,11 +43,11 @@ module.exports = (env) => {
           "!*.html",
         ],
       }),
-      //ifDevelopment(new webpack.HotModuleReplacementPlugin()),
+      ifDevelopment(new webpack.HotModuleReplacementPlugin()),
     ]),
     output: {
       path: path.resolve(__dirname, "./public"),
-      filename: "js/[name].bundle.js"
+      filename: "js/[name].bundle.js",
     },
     optimization: removeEmpty({
       minimize: ifProduction(true),
