@@ -25,9 +25,10 @@ module.exports = {
     }),
     new StylelintPlugin({
       configFile: ".stylelintrc.yml",
-      fix: true,
     }),
-    new ESLintPlugin(),
+    new ESLintPlugin({
+      failOnError: false,
+    }),
     new CleanWebpackPlugin({
       root: "./public",
       dry: false,
@@ -72,7 +73,7 @@ module.exports = {
     rules: [
       // JavaScript
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
       },

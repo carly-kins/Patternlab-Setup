@@ -7,7 +7,7 @@
   </a>
 </p>
 
-> A experimental setup of Patternlab using grunt.js to automate final build.
+> My flavor of Patternlab with webpack
 
 ## Install
 
@@ -15,16 +15,36 @@
 npm install
 ```
 
-## Develop
+## Development Build
+Two things happen concurrently: 
+
+- Patternlab:
+  - builds the patterns 
+  - builds the UI
+  - watches for changes
+- Webpack: 
+  - builds development .js bundles (inline source maps)
+  - builds development .sass bundeles (inline source maps)
+  - watches for changes
 
 ```sh
-grunt dev
+npm run dev
 ```
 
-## Build
+## Production Build
+Two things happen concurrently: 
+
+- Patternlab:
+  - builds the patterns 
+  - builds the UI
+- Webpack: 
+  - builds production .js bundles (inline source maps)
+  - builds production .sass bundeles (inline source maps)
+
+Note, patternlab and webpack will not be watching for changes in the production build. 
 
 ```sh
-grunt build
+npm run prod
 ```
 
 ## Clean

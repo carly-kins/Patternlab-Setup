@@ -1,4 +1,5 @@
-import './getting-started.js';
+import './getting-started';
+import './hello';
 
 if (module.hot) {
     // Accept hot update

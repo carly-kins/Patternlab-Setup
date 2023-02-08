@@ -1,12 +1,12 @@
 defaultSeverity: warning
 extends:
-    - stylelint-config-standard
-    - stylelint-config-recommended
-    - stylelint-config-sass-guidelines
+  - stylelint-config-standard
+  - stylelint-config-recommended
+  - stylelint-config-sass-guidelines
 plugins:
-    - stylelint-scss
+  - stylelint-scss
 rules:
-# Line Spacing
+  # Line Spacing
   rule-empty-line-before:
     - always-multi-line
     - ignore:
@@ -14,9 +14,10 @@ rules:
         - first-nested
         - inside-block
 
-# Disallows
-  function-no-unknown: 
-   - null
+  # Disallows
+  max-line-length: null
+  function-no-unknown:
+    - null
   selector-max-id: 2
   comment-no-empty: true
   declaration-block-no-duplicate-properties: true
@@ -42,23 +43,23 @@ rules:
   property-no-unknown:
     - true
     - ignoreProperties:
-        - 'box-orient'
-  number-max-precision: null 
+        - "box-orient"
+  number-max-precision: null
   color-function-notation: null
 
-# Nesting
+  # Nesting
   max-nesting-depth:
     - 5
-    - ignore: ['blockless-at-rules', 'pseudo-classes']  
+    - ignore: ["blockless-at-rules", "pseudo-classes"]
 
-# Name Formats
+  # Name Formats
   selector-class-pattern: ^[A-Z].*$
-  scss/at-mixin-pattern: ^[A-Z].*$  
+  scss/at-mixin-pattern: ^[A-Z].*$
   alpha-value-notation: number
 
-# Style Guide
+  # Style Guide
   indentation: 4
-  color-named: 'never'
+  color-named: "never"
   declaration-block-trailing-semicolon: always
   unit-case: lower
   color-hex-case: lower
@@ -73,7 +74,7 @@ rules:
   string-quotes: single
   selector-max-compound-selectors: 6
 
-# Inner Spacing
+  # Inner Spacing
   function-calc-no-unspaced-operator: true
   declaration-block-semicolon-newline-after: always
   block-opening-brace-space-before: always
@@ -82,7 +83,7 @@ rules:
   declaration-bang-space-after: never
   declaration-colon-space-after: always
 
-# Final Items
+  # Final Items
   scss/at-import-partial-extension-blacklist: [/css/]
   import-notation: null
   scss/at-import-no-partial-leading-underscore: null
