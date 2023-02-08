@@ -4,13 +4,16 @@ module.exports = class PattenlabWebpackPlugin {
   }
   apply(compiler) {
     compiler.hooks.done.tap({ name: "PatternlabPlugin" }, () => {
-      const plConfig = require("../patternlab-config.json");
+      const plConfig = require("../../patternlab-config.json");
       const patternlab = require("@pattern-lab/core")(plConfig);
       const ConfiguredCleanOption = true;
       // Patternlab Core Options
       const build = (done) => {
         done = done || function () {};
-        const buildResult = patternlab.build(() => {}, ConfiguredCleanOption);
+        const buildResult = patternlab.build(() => {}, {
+          cleanPublic: true,
+          watch: true,
+        });
         // handle async version of Pattern Lab
         if (buildResult instanceof Promise) {
           return buildResult.then(done);

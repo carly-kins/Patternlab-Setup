@@ -4,31 +4,46 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { getIfUtils, removeEmpty } = require("webpack-config-utils");
 const TerserPlugin = require("terser-webpack-plugin");
-const PattenlabWebpackPlugin = require("./patternlab-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+//const PattenlabWebpackPlugin = require("./.ideas/patternlab-webpack-plugin");
+//TODO: 
+// -- Add StyleLint
+// -- Add CSS Min
+// -- Add esLint
+// -- Add imageMin
+
+// -- Investigate Dev vs Prod Config Files
+// -- Investigate PL plugin 
+// -- Integration build
 
 module.exports = (env) => {
   const { ifProduction, ifDevelopment } = getIfUtils(env);
 
   const config = {
     entry: {
-      main: path.resolve(__dirname, "./source/js/index.js"),
+      main: { import: "./source/js/index.js", filename: "js/main.js" },
+      small: "./source/sass/small.scss",
     },
     devtool: ifDevelopment("inline-source-map"),
     devtool: ifProduction("source-map"),
-    devServer: {
-      historyApiFallback: true,
-      open: true,
-      compress: true,
-      hot: true,
-      port: 8080,
-    },
     plugins: removeEmpty([
-      new PattenlabWebpackPlugin({
-        command: "build",
+     // new PattenlabWebpackPlugin ({
+     //  command: "build",
+     // }),
+      new BrowserSyncPlugin({
+        // browse to http://localhost:3000/ during development,
+        // ./public directory is being served
+        host: 'localhost',
+        port: 3000,
+        server: { baseDir: ['public'] },
+      }),
+      new MiniCssExtractPlugin({
+        filename: "css/[name].css",
+        chunkFilename: "[id].css",
       }),
       new CleanWebpackPlugin({
         root: "./public",
-        verbose: true,
         dry: false,
         cleanOnceBeforeBuildPatterns: [
           "main.**.js",
@@ -47,12 +62,27 @@ module.exports = (env) => {
     ]),
     output: {
       path: path.resolve(__dirname, "./public"),
-      filename: "js/[name].bundle.js",
+      publicPath: "/public",
+      sourceMapFilename: "[file].map",
     },
     optimization: removeEmpty({
       minimize: ifProduction(true),
-      minimizer: ifProduction([new TerserPlugin()]),
+      minimizer: [new TerserPlugin()],
     }),
+    resolve: {
+      extensions: [
+        ".scss",
+        ".js",
+        ".json",
+        ".jsx",
+        ".gif",
+        ".ico",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".svg",
+      ],
+    },
     module: {
       rules: [
         // JavaScript
@@ -61,15 +91,26 @@ module.exports = (env) => {
           exclude: /node_modules/,
           use: ["babel-loader"],
         },
-        // Images
         {
-          test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-          type: "asset/resource",
+          test: /\.scss$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            {
+              loader: "sass-loader",
+              options: {
+                // Prefer `dart-sass`
+                implementation: require("sass"),
+              },
+            },
+          ],
         },
-        // Fonts and SVGs
         {
-          test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-          type: "asset/inline",
+          test: /\.(png|woff|woff2|eot|otf|ttf|svg)$/, // is there a way to use this as the font generator instead of PL?
+          type: "asset/resource",
+          generator: {
+            filename: "assets/fonts/[hash][ext]",
+          },
         },
       ],
     },
