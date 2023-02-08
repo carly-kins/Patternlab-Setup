@@ -1,14 +1,11 @@
-@import 'node_modules/foundation-sites/scss/util/util'; // This is for rem-calc() 
-
-@import "_partials/_global/_mixins";
-@import "_partials/_global/_fonts";
-@import "_partials/_global/_variables";
-@import "_partials/_global/_base";
-
-@import "node_modules/bootstrap/scss/_functions";
-@import "_partials/_vendor/bootstrap-variables";
-@import "node_modules/bootstrap/scss/_variables";
-@import "node_modules/bootstrap/scss/_maps";
-@import "node_modules/bootstrap/scss/_mixins";
-@import "node_modules/bootstrap/scss/_utilities";
-
+@import 'node_modules/foundation-sites/scss/util/util'; // This is for rem-calc()
+@import '_partials/_global/_mixins';
+@import '_partials/_global/_fonts';
+@import '_partials/_global/_variables';
+@import '_partials/_global/_base';
+@import 'node_modules/bootstrap/scss/_functions';
+@import '_partials/_vendor/bootstrap-variables';
+@import 'node_modules/bootstrap/scss/_variables';
+@import 'node_modules/bootstrap/scss/_maps';
+@import 'node_modules/bootstrap/scss/_mixins';
+@import 'node_modules/bootstrap/scss/_utilities';

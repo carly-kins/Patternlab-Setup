@@ -1,10 +1,10 @@
-@import "global";
-@import "_partials/_vendor/bootstrap";
+@import 'global';
+@import '_partials/_vendor/bootstrap';
 
 // Atoms
-@import "source/sass/_partials/_patterns/atoms/icon/icon-sm";
-@import "source/sass/_partials/_patterns/atoms/image/image-sm";
-@import "source/sass/_partials/_patterns/atoms/logo/logo-sm";
+@import 'source/sass/_partials/_patterns/atoms/icon/icon-sm';
+@import 'source/sass/_partials/_patterns/atoms/image/image-sm';
+@import 'source/sass/_partials/_patterns/atoms/logo/logo-sm';
 // Molecules
 //@import "source/_patterns/molecules/buttons/button";
 //@import "source/_patterns/molecules/card/card";

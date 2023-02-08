@@ -1,107 +1,107 @@
-/*------------------------------------*\
+/* ------------------------------------*\
     #TEXT PASSAGE
-\*------------------------------------*/
+\*------------------------------------ */
 
 /**
  * 1) A passage of text, including various components (i.e. article, blog post)
  */
 .c-text-passage {
-	p {
-		margin-bottom: 1rem;
-	}
+    p {
+        margin-bottom: 1rem;
+    }
 
-	/**
+    /**
 	 * Link within the text passage
 	 */
-	a {
-		text-decoration: underline;
-	}
+    a {
+        text-decoration: underline;
+    }
 
-	/**
+    /**
 	 * Blockquote within text passage
 	 */
-	blockquote {
-		padding-left: 0.8rem;
-		border-left: 3px solid $color-neutral-gray-73;
-		color: $color-neutral-gray-50;
-		font-size: 1rem;
-	}
+    blockquote {
+        border-left: 3px solid $color-neutral-gray-73;
+        color: $color-neutral-gray-50;
+        font-size: 1rem;
+        padding-left: 0.8rem;
+    }
 
-	/**
+    /**
 	  * First-level heading within text passage
 	  */
-	h1 {
-		margin-bottom: 1rem;
-	}
+    h1 {
+        margin-bottom: 1rem;
+    }
 
-	/**
+    /**
 	 * Second-level heading within text passage
 	 */
-	h2 {
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-	}
+    h2 {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
 
-	/**
+    /**
 	 * Third-level heading within text passage
 	 */
-	h3 {
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-	}
+    h3 {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
 
-	/**
+    /**
 	 * Fourth-level heading within text passage
 	 */
-	h4 {
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-	}
+    h4 {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
 
-	/**
+    /**
 	 * Fifth-level heading within text passage
 	 */
-	h5 {
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-	}
+    h5 {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
 
-	/**
+    /**
 	 * Sixth-level heading within text passage
 	 */
-	h6 {
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-	}
+    h6 {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
 
-	/**
+    /**
 	 * Unordered list within text passage
 	 */
-	ul {
-		list-style: disc;
-		margin-left: 1rem;
-		margin-bottom: 1rem;
+    ul {
+        list-style: disc;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
 
-		li:last-child {
-			margin-bottom: 0;
-		}
-	}
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
 
-	/**
+    /**
 	 * Ordered list within text passage
 	 */
-	ol {
-		list-style: decimal;
-		margin-left: 1rem;
-		margin-bottom: 1rem;
+    ol {
+        list-style: decimal;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
 
-		li:last-child {
-			margin-bottom: 0;
-		}
-	}
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
 
-	li {
-		margin-bottom: 0.5rem;
-		line-height: 1.6;
-	}
+    li {
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
 }

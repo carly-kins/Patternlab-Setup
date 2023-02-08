@@ -1,20 +1,21 @@
-/*------------------------------------*\
+/* ------------------------------------*\
     #HEADER
-\*------------------------------------*/
+\*------------------------------------ */
+
 /**
  * Global block at the top of each page containing the navigation, logo, and other potential contents
  */
 .c-header {
-	position: relative;
-	padding: $spacer;
-	margin-bottom: $spacer;
+    margin-bottom: $spacer;
+    padding: $spacer;
+    position: relative;
 }
 
 /**
  * Header inner
  */
 .c-header__inner {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }

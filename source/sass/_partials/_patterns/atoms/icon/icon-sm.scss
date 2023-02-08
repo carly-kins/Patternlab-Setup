@@ -1,7 +1,7 @@
-$block: "icon";
+$block: 'icon';
 
 .#{$block} {
-	height: 1rem;
-	width: 1rem;
-	color: $color-neutral-black;
+    color: $color-neutral-black;
+    height: 1rem;
+    width: 1rem;
 }

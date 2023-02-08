@@ -1,15 +1,12 @@
 @mixin textGradient() {
-	background-color: $russian-violet;
+    background-clip: text;
+    background-color: $russian-violet;
     background-image: linear-gradient(35deg, $russian-violet, $thistle);
-	background-image: -webkit-linear-gradient(35deg, $russian-violet, $thistle);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent; 
- }
+    -webkit-text-fill-color: transparent;
+}
 
- $backgroundURL: 'https://images.unsplash.com/photo-1661574080636-014017323f0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
- @mixin backgroundgradient() {
- 	background: -webkit-repeating-linear-gradient(rgba(0,0,0,0.3) 0,transparent 1px,transparent 2px,rgba(0,0,0,0.3) 3px), -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.75)), color-stop(100%,rgba(0,0,0,0.3))), url($backgroundURL); /* Chrome,Safari4+ */
-	background: -webkit-repeating-linear-gradient(rgba(0,0,0,0.3) 0,transparent 1px,transparent 2px,rgba(0,0,0,0.3) 3px), -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.75) 100%), url($backgroundURL); /* Chrome10+,Safari5.1+ */
-	background: repeating-linear-gradient(rgba(0,0,0,0.3) 0,transparent 1px,transparent 2px,rgba(0,0,0,0.3) 3px), linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.75) 100%), url($backgroundURL); /* W3C */
- }
+$backgroundURL: 'https://images.unsplash.com/photo-1661574080636-014017323f0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+
+@mixin backgroundgradient() { /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */
+    background: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px), linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.75) 100%), url($backgroundURL); /* W3C */
+}
