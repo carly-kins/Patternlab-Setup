@@ -53,7 +53,7 @@ rules:
     - ignore: ["blockless-at-rules", "pseudo-classes"]
 
   # Name Formats
-  selector-class-pattern: ^[A-Z].*$
+  selector-class-pattern: null
   scss/at-mixin-pattern: ^[A-Z].*$
   alpha-value-notation: number
 

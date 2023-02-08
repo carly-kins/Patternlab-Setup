@@ -1,5 +1,4 @@
-import './getting-started';
-import './hello';
+import './react-app/pageTemplate';
 
 if (module.hot) {
     // Accept hot update
