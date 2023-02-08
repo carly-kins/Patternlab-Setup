@@ -1,20 +1,4 @@
 {
-  "app": {
-    "webpackDevServer": {
-      "url": "http://localhost",
-      "port": 3000,
-      "watchContentBase": true,
-      "watchOptions": {
-        "aggregateTimeout": 500,
-        "ignored": [],
-        "info-verbosity": "verbose"
-      }
-    },
-    "webpackMerge": {
-      "entry": "replace"
-    },
-    "namespace": ""
-  },
   "cacheBust": true,
   "cleanPublic": true,
   "defaultPattern": "all",
@@ -71,7 +55,6 @@
         "patternSectionSubgroup": "views/partials/patternSectionSubgroup.mustache",
         "viewall": "views/viewall.mustache"
       },
-      "js": "dist/",
       "images": "./source/images/",
       "fonts": "./source/fonts/",
       "css": "./source/css/"
