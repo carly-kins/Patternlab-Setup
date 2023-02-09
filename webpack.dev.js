@@ -6,9 +6,8 @@ const common = require("./webpack.common.js"); // See above
 
 module.exports = merge(common, {
   mode: "development",
-  devtool: "inline-source-map",
+  devtool: "cheap-source-map",
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    
   ],
 });

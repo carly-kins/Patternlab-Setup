@@ -1,11 +1,13 @@
-import React from "react";
+/* eslint-disable*/
+
+import React from 'react';
 
 function Header() {
   // Import result is the URL of your image
   return (
-    <div class="container inline-flex">
+    <div className='container inline-flex'>
       <h3>I'm a component made in react!</h3>
-      <img class="icon-react" src="../../images/react.png" alt="Logo" />
+      <img className='icon-react' src='../../images/react.png' alt='Logo' />
     </div>
   );
 }
