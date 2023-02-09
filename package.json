@@ -13,8 +13,8 @@
     "pl:version": "patternlab --version",
     "webpack:version": "webpack --v",
     "watch": "webpack --watch",
-    "dev": "grunt clean && concurrently \"npm run pl:serve\" \"webpack --watch --config webpack.dev.js\"",
-    "prod": "grunt clean && concurrently \"npm run pl:build\" \"webpack --watch --config webpack.prod.js\"",
+    "dev": "concurrently \"npm run pl:serve\" \"webpack --watch --config webpack.dev.js\"",
+    "prod": "concurrently \"npm run pl:build\" \"webpack --watch --config webpack.prod.js\"",
     "prod:build": "webpack --config webpack.prod.js"
   },
   "keywords": [],

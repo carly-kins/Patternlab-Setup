@@ -24,7 +24,11 @@
 				"monosans.djlint"
 			],
 			"settings": {
+				"eslint.options": {
+					"overrideConfigFile": "./.eslintrc"
+				},
 				"djlint.useVenv": false,
+				"djlint.enableLinting": true,
 				"[html]": {
 					"editor.defaultFormatter": "vscode.html-language-features"
 				},
@@ -58,7 +62,6 @@
 				"[twig]": {
 					"editor.defaultFormatter": "monosans.djlint"
 				},
-				"djlint.enableLinting": false,
 				"terminal.integrated.defaultProfile.linux": "zsh",
 				"terminal.integrated.env.osx": {},
 				"workbench.colorTheme": "Catppuccin Mocha",
