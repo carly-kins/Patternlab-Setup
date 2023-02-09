@@ -1,24 +1,26 @@
-const { merge } = require("webpack-merge");
-const path = require("path");
-const common = require("./webpack.common.js");
-//const RemovePlugin = require('remove-files-webpack-plugin'); //https://www.npmjs.com/package/remove-files-webpack-plugin
-//TODO:
-// -- Investigate Dev vs Prod Config Files //https://webpack.js.org/guides/production/. minimize images on production build https://github.com/gruntjs/grunt-contrib-imagemin
+/* eslint-disable no-console, no-undef*/
+const { merge } = require("webpack-merge"); // https://webpack.js.org/guides/production/
+const common = require("./webpack.common.js"); // See above
+const RemovePlugin = require('remove-files-webpack-plugin'); // https://github.com/Amaimersion/remove-files-webpack-plugin/blob/master/README.md
+//const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin"); // https://webpack.js.org/plugins/image-minimizer-webpack-plugin/
 
 module.exports = merge(common, {
   mode: "production",
   devtool: "source-map",
-  //plugins: [
-    //new RemovePlugin({
-    //before: {
-    // parameters for "before normal compilation" stage.
-    //},
-    //watch: {
-    // parameters for "before watch compilation" stage.
-    //},
-    //after: {
-    // parameters for "after normal and watch compilation" stage.
-    //}
-    //})
-  //],
+  plugins: [
+    new RemovePlugin({
+      before: {
+        include: [
+          './public', //clean entire public folder before builf
+          './integrated',
+      ]
+      },
+      watch: {
+        //parameters for "before watch compilation" stage.
+      },
+      after: {
+        // parameters for "after normal and watch compilation" stage.
+      }
+    })
+  ],
 });

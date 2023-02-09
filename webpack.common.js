@@ -1,4 +1,4 @@
-// webpack.config.js
+/* eslint-disable no-console, no-undef*/
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -25,6 +25,7 @@ module.exports = {
     }),
     new StylelintPlugin({
       configFile: ".stylelintrc.yml",
+      fix: true,
     }),
     new ESLintPlugin({
       failOnError: false,
