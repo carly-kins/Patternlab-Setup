@@ -6,7 +6,8 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const StylelintPlugin = require("stylelint-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
-const RemovePlugin = require('remove-files-webpack-plugin'); // https://github.com/Amaimersion/remove-files-webpack-plugin/blob/master/README.md
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+//const RemovePlugin = require('remove-files-webpack-plugin'); // https://github.com/Amaimersion/remove-files-webpack-plugin/blob/master/README.md
 
 module.exports = {
   entry: {
@@ -30,19 +31,12 @@ module.exports = {
     new ESLintPlugin({
       failOnError: false,
     }),
-    new RemovePlugin({
-      before: {
-        include: [
-          './public' //clean entire public folder before build
-      ]
-      },
-      watch: {
-        //parameters for "before watch compilation" stage.
-      },
-      after: {
+    new NodePolyfillPlugin(),
+    //new RemovePlugin({
+     // after: {
         // parameters for "after normal and watch compilation" stage.
-      }
-    }),
+     // }
+   // }),
   ],
   output: {
     path: path.resolve(__dirname, "./public"),
@@ -59,6 +53,7 @@ module.exports = {
       ".js",
       ".json",
       ".jsx",
+      ".hbs",
       ".gif",
       ".ico",
       ".png",
@@ -74,6 +69,11 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
+      },
+      {
+        test: /\.hbs$/,
+        exclude: /node_modules/,
+        loader: "handlebars-loader"
       },
       {
         test: /\.scss$/,

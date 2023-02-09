@@ -17,6 +17,11 @@
     "prod": "concurrently \"npm run pl:build\" \"webpack --watch --config webpack.prod.js\"",
     "prod:build": "webpack --config webpack.prod.js"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -66,6 +71,7 @@
     "eslint-webpack-plugin": "^4.0.0",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "postcss-cli": "^10.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
