@@ -4,7 +4,7 @@ module.exports = class PattenlabWebpackPlugin {
   }
   apply(compiler) {
     compiler.hooks.done.tap({ name: "PatternlabPlugin" }, () => {
-      const plConfig = require("../../patternlab-config.json");
+      const plConfig = require("../patternlab-config.json");
       const patternlab = require("@pattern-lab/core")(plConfig);
       const ConfiguredCleanOption = true;
       // Patternlab Core Options

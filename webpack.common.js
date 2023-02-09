@@ -1,12 +1,12 @@
 /* eslint-disable no-console, no-undef*/
 const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const StylelintPlugin = require("stylelint-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
+const RemovePlugin = require('remove-files-webpack-plugin'); // https://github.com/Amaimersion/remove-files-webpack-plugin/blob/master/README.md
 
 module.exports = {
   entry: {
@@ -30,21 +30,18 @@ module.exports = {
     new ESLintPlugin({
       failOnError: false,
     }),
-    new CleanWebpackPlugin({
-      root: "./public",
-      dry: false,
-      cleanOnceBeforeBuildPatterns: [
-        "main.**.js",
-        "*.json",
-        "!annotations/**/*",
-        "!css/**/*",
-        "!fonts/**/*",
-        "!images/**/*",
-        "!patterns/**/*",
-        "!styleguide/**/*",
-        "!*.ico",
-        "!*.html",
-      ],
+    new RemovePlugin({
+      before: {
+        include: [
+          './public' //clean entire public folder before build
+      ]
+      },
+      watch: {
+        //parameters for "before watch compilation" stage.
+      },
+      after: {
+        // parameters for "after normal and watch compilation" stage.
+      }
     }),
   ],
   output: {
