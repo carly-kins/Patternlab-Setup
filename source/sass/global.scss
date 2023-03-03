@@ -1,11 +1,45 @@
 @import 'node_modules/foundation-sites/scss/util/util'; // This is for rem-calc()
+
+// https://getbootstrap.com/docs/5.2/customize/sass/
+
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+@import '_partials/_vendor/bootstrap-variables';
+
 @import '_partials/_global/_mixins';
 @import '_partials/_global/_fonts';
 @import '_partials/_global/_variables';
 @import '_partials/_global/_base';
-@import 'node_modules/bootstrap/scss/_functions';
-@import '_partials/_vendor/bootstrap-variables';
-@import 'node_modules/bootstrap/scss/_variables';
-@import 'node_modules/bootstrap/scss/_maps';
-@import 'node_modules/bootstrap/scss/_mixins';
-@import 'node_modules/bootstrap/scss/_utilities';
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+// // In other import files for small, med, large, etc.
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// // In other import files for small, med, large, etc.
+
+//@import 'node_modules/foundation-sites/scss/util/util'; // This is for rem-calc()
+//@import '_partials/_global/_mixins';
+//@import '_partials/_global/_fonts';
+//@import '_partials/_global/_variables';
+//@import '_partials/_global/_base';
+//@import 'node_modules/bootstrap/scss/_functions';
+//@import '_partials/_vendor/bootstrap-variables';
+//@import 'node_modules/bootstrap/scss/_variables';
+//@import 'node_modules/bootstrap/scss/_maps';
+//@import 'node_modules/bootstrap/scss/_mixins';
+//@import 'node_modules/bootstrap/scss/_utilities';
